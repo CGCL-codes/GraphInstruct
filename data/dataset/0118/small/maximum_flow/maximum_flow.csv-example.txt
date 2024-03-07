@@ -1,0 +1,816 @@
+####### sample 1 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<2>, <3>, weight:10), (<2>, <0>, weight:8), (<2>, <10>, weight:0), (<2>, <8>, weight:0), (<2>, <6>, weight:0), (<3>, <4>, weight:7), (<3>, <10>, weight:8), (<3>, <7>, weight:7), (<3>, <9>, weight:0), (<0>, <5>, weight:9), (<0>, <4>, weight:3), (<0>, <10>, weight:3), (<0>, <1>, weight:6), (<0>, <9>, weight:9), (<4>, <8>, weight:8), (<4>, <7>, weight:2), (<4>, <1>, weight:2), (<4>, <0>, weight:0), (<10>, <2>, weight:9), (<10>, <9>, weight:10), (<10>, <6>, weight:3), (<10>, <5>, weight:10), (<10>, <4>, weight:4), (<10>, <0>, weight:0), (<10>, <3>, weight:0), (<7>, <0>, weight:7), (<5>, <9>, weight:9), (<1>, <4>, weight:1), (<1>, <0>, weight:0), (<9>, <3>, weight:8), (<9>, <0>, weight:7), (<8>, <10>, weight:6), (<8>, <7>, weight:6), (<8>, <2>, weight:4), (<8>, <0>, weight:6), (<8>, <5>, weight:6), (<8>, <4>, weight:5), (<6>, <4>, weight:4), (<6>, <8>, weight:10), (<6>, <2>, weight:2), (<6>, <10>, weight:0)]
+
+>> graph_adj:
+
+{<2>: [(<3>, weight:10), (<0>, weight:8), (<10>, weight:0), (<8>, weight:0), (<6>, weight:0)],
+<3>: [(<4>, weight:7), (<10>, weight:8), (<7>, weight:7), (<9>, weight:0)],
+<0>: [(<5>, weight:9), (<4>, weight:3), (<10>, weight:3), (<1>, weight:6), (<9>, weight:9)],
+<4>: [(<8>, weight:8), (<7>, weight:2), (<1>, weight:2), (<0>, weight:0)],
+<10>: [(<2>, weight:9), (<9>, weight:10), (<6>, weight:3), (<5>, weight:10), (<4>, weight:4), (<0>, weight:0), (<3>, weight:0)],
+<7>: [(<0>, weight:7)],
+<5>: [(<9>, weight:9)],
+<1>: [(<4>, weight:1), (<0>, weight:0)],
+<9>: [(<3>, weight:8), (<0>, weight:7)],
+<8>: [(<10>, weight:6), (<7>, weight:6), (<2>, weight:4), (<0>, weight:6), (<5>, weight:6), (<4>, weight:5)],
+<6>: [(<4>, weight:4), (<8>, weight:10), (<2>, weight:2), (<10>, weight:0)]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <3> (weight: 10), <0> (weight: 8), <10> (weight: 0), <8> (weight: 0), <6> (weight: 0).
+Node <3> is connected to nodes <4> (weight: 7), <10> (weight: 8), <7> (weight: 7), <9> (weight: 0).
+Node <0> is connected to nodes <5> (weight: 9), <4> (weight: 3), <10> (weight: 3), <1> (weight: 6), <9> (weight: 9).
+Node <4> is connected to nodes <8> (weight: 8), <7> (weight: 2), <1> (weight: 2), <0> (weight: 0).
+Node <10> is connected to nodes <2> (weight: 9), <9> (weight: 10), <6> (weight: 3), <5> (weight: 10), <4> (weight: 4), <0> (weight: 0), <3> (weight: 0).
+Node <7> is connected to node <0> (weight: 7).
+Node <5> is connected to node <9> (weight: 9).
+Node <1> is connected to nodes <4> (weight: 1), <0> (weight: 0).
+Node <9> is connected to nodes <3> (weight: 8), <0> (weight: 7).
+Node <8> is connected to nodes <10> (weight: 6), <7> (weight: 6), <2> (weight: 4), <0> (weight: 6), <5> (weight: 6), <4> (weight: 5).
+Node <6> is connected to nodes <4> (weight: 4), <8> (weight: 10), <2> (weight: 2), <10> (weight: 0).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+41
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <0> and node <2> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+15
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<0>, <10>, <2>] with minimum residual capacity of 3. Updated the flow along this path. Total flow: 0+3=3;
+Found augmenting path: [<0>, <4>, <8>, <2>] with minimum residual capacity of 3. Updated the flow along this path. Total flow: 3+3=6;
+Found augmenting path: [<0>, <1>, <4>, <8>, <2>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 6+1=7;
+Found augmenting path: [<0>, <9>, <3>, <10>, <2>] with minimum residual capacity of 6. Updated the flow along this path. Total flow: 7+6=13;
+Found augmenting path: [<0>, <9>, <3>, <10>, <6>, <2>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 13+2=15;
+Thus, the maximum flow from node <0> to node <2> is 
+
+>> choices:
+
+('[16, 0, 18, 15]',)
+
+>> label:
+
+3
+
+####### sample 2 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<12>, <1>, weight:7), (<12>, <8>, weight:6), (<12>, <4>, weight:6), (<12>, <11>, weight:6), (<12>, <5>, weight:7), (<12>, <2>, weight:3), (<12>, <6>, weight:0), (<1>, <4>, weight:9), (<1>, <6>, weight:10), (<1>, <9>, weight:10), (<8>, <7>, weight:2), (<8>, <4>, weight:5), (<8>, <10>, weight:1), (<8>, <5>, weight:2), (<8>, <2>, weight:1), (<8>, <9>, weight:2), (<8>, <1>, weight:4), (<4>, <9>, weight:5), (<4>, <0>, weight:4), (<4>, <12>, weight:1), (<4>, <3>, weight:6), (<4>, <1>, weight:10), (<4>, <6>, weight:0), (<4>, <2>, weight:0), (<11>, <5>, weight:1), (<11>, <2>, weight:9), (<11>, <9>, weight:4), (<11>, <12>, weight:4), (<11>, <3>, weight:3), (<11>, <1>, weight:8), (<11>, <8>, weight:2), (<5>, <12>, weight:9), (<5>, <4>, weight:10), (<5>, <6>, weight:0), (<2>, <8>, weight:6), (<2>, <7>, weight:9), (<2>, <4>, weight:9), (<2>, <6>, weight:0), (<6>, <5>, weight:2), (<6>, <2>, weight:9), (<6>, <12>, weight:1), (<6>, <7>, weight:8), (<6>, <4>, weight:4), (<6>, <1>, weight:0), (<9>, <0>, weight:7), (<9>, <3>, weight:7), (<9>, <1>, weight:3), (<9>, <8>, weight:3), (<9>, <4>, weight:2), (<9>, <6>, weight:4), (<9>, <11>, weight:1), (<7>, <5>, weight:1), (<7>, <1>, weight:1), (<10>, <11>, weight:4), (<10>, <2>, weight:5), (<10>, <0>, weight:8), (<10>, <8>, weight:10), (<0>, <12>, weight:8), (<0>, <1>, weight:9), (<0>, <7>, weight:10), (<0>, <6>, weight:7), (<0>, <10>, weight:2), (<0>, <11>, weight:5), (<0>, <5>, weight:5), (<0>, <2>, weight:4), (<0>, <9>, weight:8), (<0>, <4>, weight:0), (<3>, <1>, weight:9), (<3>, <4>, weight:2), (<3>, <6>, weight:5), (<3>, <11>, weight:7), (<3>, <2>, weight:4), (<3>, <9>, weight:10), (<3>, <0>, weight:8)]
+
+>> graph_adj:
+
+{<12>: [(<1>, weight:7), (<8>, weight:6), (<4>, weight:6), (<11>, weight:6), (<5>, weight:7), (<2>, weight:3), (<6>, weight:0)],
+<1>: [(<4>, weight:9), (<6>, weight:10), (<9>, weight:10)],
+<8>: [(<7>, weight:2), (<4>, weight:5), (<10>, weight:1), (<5>, weight:2), (<2>, weight:1), (<9>, weight:2), (<1>, weight:4)],
+<4>: [(<9>, weight:5), (<0>, weight:4), (<12>, weight:1), (<3>, weight:6), (<1>, weight:10), (<6>, weight:0), (<2>, weight:0)],
+<11>: [(<5>, weight:1), (<2>, weight:9), (<9>, weight:4), (<12>, weight:4), (<3>, weight:3), (<1>, weight:8), (<8>, weight:2)],
+<5>: [(<12>, weight:9), (<4>, weight:10), (<6>, weight:0)],
+<2>: [(<8>, weight:6), (<7>, weight:9), (<4>, weight:9), (<6>, weight:0)],
+<6>: [(<5>, weight:2), (<2>, weight:9), (<12>, weight:1), (<7>, weight:8), (<4>, weight:4), (<1>, weight:0)],
+<9>: [(<0>, weight:7), (<3>, weight:7), (<1>, weight:3), (<8>, weight:3), (<4>, weight:2), (<6>, weight:4), (<11>, weight:1)],
+<7>: [(<5>, weight:1), (<1>, weight:1)],
+<10>: [(<11>, weight:4), (<2>, weight:5), (<0>, weight:8), (<8>, weight:10)],
+<0>: [(<12>, weight:8), (<1>, weight:9), (<7>, weight:10), (<6>, weight:7), (<10>, weight:2), (<11>, weight:5), (<5>, weight:5), (<2>, weight:4), (<9>, weight:8), (<4>, weight:0)],
+<3>: [(<1>, weight:9), (<4>, weight:2), (<6>, weight:5), (<11>, weight:7), (<2>, weight:4), (<9>, weight:10), (<0>, weight:8)]}
+
+>> graph_nl:
+
+Node <12> is connected to nodes <1> (weight: 7), <8> (weight: 6), <4> (weight: 6), <11> (weight: 6), <5> (weight: 7), <2> (weight: 3), <6> (weight: 0).
+Node <1> is connected to nodes <4> (weight: 9), <6> (weight: 10), <9> (weight: 10).
+Node <8> is connected to nodes <7> (weight: 2), <4> (weight: 5), <10> (weight: 1), <5> (weight: 2), <2> (weight: 1), <9> (weight: 2), <1> (weight: 4).
+Node <4> is connected to nodes <9> (weight: 5), <0> (weight: 4), <12> (weight: 1), <3> (weight: 6), <1> (weight: 10), <6> (weight: 0), <2> (weight: 0).
+Node <11> is connected to nodes <5> (weight: 1), <2> (weight: 9), <9> (weight: 4), <12> (weight: 4), <3> (weight: 3), <1> (weight: 8), <8> (weight: 2).
+Node <5> is connected to nodes <12> (weight: 9), <4> (weight: 10), <6> (weight: 0).
+Node <2> is connected to nodes <8> (weight: 6), <7> (weight: 9), <4> (weight: 9), <6> (weight: 0).
+Node <6> is connected to nodes <5> (weight: 2), <2> (weight: 9), <12> (weight: 1), <7> (weight: 8), <4> (weight: 4), <1> (weight: 0).
+Node <9> is connected to nodes <0> (weight: 7), <3> (weight: 7), <1> (weight: 3), <8> (weight: 3), <4> (weight: 2), <6> (weight: 4), <11> (weight: 1).
+Node <7> is connected to nodes <5> (weight: 1), <1> (weight: 1).
+Node <10> is connected to nodes <11> (weight: 4), <2> (weight: 5), <0> (weight: 8), <8> (weight: 10).
+Node <0> is connected to nodes <12> (weight: 8), <1> (weight: 9), <7> (weight: 10), <6> (weight: 7), <10> (weight: 2), <11> (weight: 5), <5> (weight: 5), <2> (weight: 4), <9> (weight: 8), <4> (weight: 0).
+Node <3> is connected to nodes <1> (weight: 9), <4> (weight: 2), <6> (weight: 5), <11> (weight: 7), <2> (weight: 4), <9> (weight: 10), <0> (weight: 8).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>]
+
+>> num_nodes:
+
+13
+
+>> num_edges:
+
+74
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <1> and node <9> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+29
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<1>, <9>] with minimum residual capacity of 10. Updated the flow along this path. Total flow: 0+10=10;
+Found augmenting path: [<1>, <4>, <9>] with minimum residual capacity of 5. Updated the flow along this path. Total flow: 10+5=15;
+Found augmenting path: [<1>, <4>, <0>, <9>] with minimum residual capacity of 4. Updated the flow along this path. Total flow: 15+4=19;
+Found augmenting path: [<1>, <6>, <2>, <8>, <9>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 19+2=21;
+Found augmenting path: [<1>, <6>, <12>, <11>, <9>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 21+1=22;
+Found augmenting path: [<1>, <6>, <4>, <3>, <9>] with minimum residual capacity of 4. Updated the flow along this path. Total flow: 22+4=26;
+Found augmenting path: [<1>, <6>, <5>, <12>, <11>, <9>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 26+2=28;
+Found augmenting path: [<1>, <6>, <2>, <4>, <3>, <9>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 28+1=29;
+Thus, the maximum flow from node <1> to node <9> is 
+
+>> choices:
+
+('[30, 29, 39, 0]',)
+
+>> label:
+
+1
+
+####### sample 3 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<0>, <2>, weight:1), (<0>, <9>, weight:6), (<0>, <6>, weight:10), (<0>, <3>, weight:9), (<0>, <10>, weight:6), (<0>, <11>, weight:6), (<0>, <5>, weight:6), (<2>, <8>, weight:8), (<2>, <4>, weight:5), (<2>, <6>, weight:9), (<2>, <12>, weight:4), (<2>, <7>, weight:9), (<2>, <5>, weight:8), (<2>, <0>, weight:8), (<9>, <4>, weight:9), (<9>, <6>, weight:3), (<9>, <12>, weight:8), (<9>, <0>, weight:10), (<9>, <2>, weight:8), (<9>, <5>, weight:0), (<6>, <1>, weight:5), (<6>, <10>, weight:7), (<6>, <12>, weight:2), (<6>, <7>, weight:7), (<6>, <0>, weight:4), (<6>, <8>, weight:1), (<6>, <4>, weight:1), (<6>, <5>, weight:0), (<3>, <10>, weight:7), (<3>, <7>, weight:2), (<3>, <0>, weight:0), (<3>, <4>, weight:0), (<3>, <1>, weight:0), (<10>, <7>, weight:8), (<10>, <5>, weight:2), (<10>, <9>, weight:8), (<10>, <8>, weight:3), (<10>, <3>, weight:3), (<11>, <5>, weight:3), (<11>, <0>, weight:9), (<11>, <9>, weight:7), (<11>, <8>, weight:7), (<11>, <1>, weight:3), (<11>, <10>, weight:2), (<5>, <0>, weight:2), (<5>, <2>, weight:10), (<5>, <9>, weight:7), (<5>, <8>, weight:4), (<5>, <6>, weight:1), (<5>, <11>, weight:1), (<5>, <7>, weight:2), (<8>, <6>, weight:8), (<8>, <10>, weight:6), (<8>, <7>, weight:9), (<8>, <5>, weight:3), (<4>, <6>, weight:4), (<4>, <1>, weight:7), (<4>, <3>, weight:5), (<4>, <11>, weight:3), (<4>, <7>, weight:10), (<4>, <5>, weight:1), (<4>, <2>, weight:10), (<4>, <9>, weight:0), (<12>, <0>, weight:7), (<12>, <2>, weight:9), (<12>, <8>, weight:4), (<12>, <1>, weight:7), (<12>, <10>, weight:5), (<12>, <11>, weight:5), (<7>, <5>, weight:8), (<7>, <0>, weight:1), (<7>, <8>, weight:2), (<7>, <4>, weight:3), (<7>, <10>, weight:5), (<7>, <11>, weight:7), (<7>, <12>, weight:7), (<1>, <3>, weight:9), (<1>, <7>, weight:5), (<1>, <0>, weight:6), (<1>, <9>, weight:5), (<1>, <6>, weight:9), (<1>, <11>, weight:0), (<1>, <4>, weight:0)]
+
+>> graph_adj:
+
+{<0>: [(<2>, weight:1), (<9>, weight:6), (<6>, weight:10), (<3>, weight:9), (<10>, weight:6), (<11>, weight:6), (<5>, weight:6)],
+<2>: [(<8>, weight:8), (<4>, weight:5), (<6>, weight:9), (<12>, weight:4), (<7>, weight:9), (<5>, weight:8), (<0>, weight:8)],
+<9>: [(<4>, weight:9), (<6>, weight:3), (<12>, weight:8), (<0>, weight:10), (<2>, weight:8), (<5>, weight:0)],
+<6>: [(<1>, weight:5), (<10>, weight:7), (<12>, weight:2), (<7>, weight:7), (<0>, weight:4), (<8>, weight:1), (<4>, weight:1), (<5>, weight:0)],
+<3>: [(<10>, weight:7), (<7>, weight:2), (<0>, weight:0), (<4>, weight:0), (<1>, weight:0)],
+<10>: [(<7>, weight:8), (<5>, weight:2), (<9>, weight:8), (<8>, weight:3), (<3>, weight:3)],
+<11>: [(<5>, weight:3), (<0>, weight:9), (<9>, weight:7), (<8>, weight:7), (<1>, weight:3), (<10>, weight:2)],
+<5>: [(<0>, weight:2), (<2>, weight:10), (<9>, weight:7), (<8>, weight:4), (<6>, weight:1), (<11>, weight:1), (<7>, weight:2)],
+<8>: [(<6>, weight:8), (<10>, weight:6), (<7>, weight:9), (<5>, weight:3)],
+<4>: [(<6>, weight:4), (<1>, weight:7), (<3>, weight:5), (<11>, weight:3), (<7>, weight:10), (<5>, weight:1), (<2>, weight:10), (<9>, weight:0)],
+<12>: [(<0>, weight:7), (<2>, weight:9), (<8>, weight:4), (<1>, weight:7), (<10>, weight:5), (<11>, weight:5)],
+<7>: [(<5>, weight:8), (<0>, weight:1), (<8>, weight:2), (<4>, weight:3), (<10>, weight:5), (<11>, weight:7), (<12>, weight:7)],
+<1>: [(<3>, weight:9), (<7>, weight:5), (<0>, weight:6), (<9>, weight:5), (<6>, weight:9), (<11>, weight:0), (<4>, weight:0)]}
+
+>> graph_nl:
+
+Node <0> is connected to nodes <2> (weight: 1), <9> (weight: 6), <6> (weight: 10), <3> (weight: 9), <10> (weight: 6), <11> (weight: 6), <5> (weight: 6).
+Node <2> is connected to nodes <8> (weight: 8), <4> (weight: 5), <6> (weight: 9), <12> (weight: 4), <7> (weight: 9), <5> (weight: 8), <0> (weight: 8).
+Node <9> is connected to nodes <4> (weight: 9), <6> (weight: 3), <12> (weight: 8), <0> (weight: 10), <2> (weight: 8), <5> (weight: 0).
+Node <6> is connected to nodes <1> (weight: 5), <10> (weight: 7), <12> (weight: 2), <7> (weight: 7), <0> (weight: 4), <8> (weight: 1), <4> (weight: 1), <5> (weight: 0).
+Node <3> is connected to nodes <10> (weight: 7), <7> (weight: 2), <0> (weight: 0), <4> (weight: 0), <1> (weight: 0).
+Node <10> is connected to nodes <7> (weight: 8), <5> (weight: 2), <9> (weight: 8), <8> (weight: 3), <3> (weight: 3).
+Node <11> is connected to nodes <5> (weight: 3), <0> (weight: 9), <9> (weight: 7), <8> (weight: 7), <1> (weight: 3), <10> (weight: 2).
+Node <5> is connected to nodes <0> (weight: 2), <2> (weight: 10), <9> (weight: 7), <8> (weight: 4), <6> (weight: 1), <11> (weight: 1), <7> (weight: 2).
+Node <8> is connected to nodes <6> (weight: 8), <10> (weight: 6), <7> (weight: 9), <5> (weight: 3).
+Node <4> is connected to nodes <6> (weight: 4), <1> (weight: 7), <3> (weight: 5), <11> (weight: 3), <7> (weight: 10), <5> (weight: 1), <2> (weight: 10), <9> (weight: 0).
+Node <12> is connected to nodes <0> (weight: 7), <2> (weight: 9), <8> (weight: 4), <1> (weight: 7), <10> (weight: 5), <11> (weight: 5).
+Node <7> is connected to nodes <5> (weight: 8), <0> (weight: 1), <8> (weight: 2), <4> (weight: 3), <10> (weight: 5), <11> (weight: 7), <12> (weight: 7).
+Node <1> is connected to nodes <3> (weight: 9), <7> (weight: 5), <0> (weight: 6), <9> (weight: 5), <6> (weight: 9), <11> (weight: 0), <4> (weight: 0).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>]
+
+>> num_nodes:
+
+13
+
+>> num_edges:
+
+83
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <5> and node <3> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+26
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<5>, <0>, <3>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 0+2=2;
+Found augmenting path: [<5>, <2>, <4>, <3>] with minimum residual capacity of 5. Updated the flow along this path. Total flow: 2+5=7;
+Found augmenting path: [<5>, <2>, <0>, <3>] with minimum residual capacity of 5. Updated the flow along this path. Total flow: 7+5=12;
+Found augmenting path: [<5>, <9>, <0>, <3>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 12+2=14;
+Found augmenting path: [<5>, <8>, <10>, <3>] with minimum residual capacity of 3. Updated the flow along this path. Total flow: 14+3=17;
+Found augmenting path: [<5>, <6>, <1>, <3>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 17+1=18;
+Found augmenting path: [<5>, <11>, <1>, <3>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 18+1=19;
+Found augmenting path: [<5>, <9>, <4>, <1>, <3>] with minimum residual capacity of 5. Updated the flow along this path. Total flow: 19+5=24;
+Found augmenting path: [<5>, <8>, <6>, <1>, <3>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 24+1=25;
+Found augmenting path: [<5>, <7>, <4>, <1>, <3>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 25+1=26;
+Thus, the maximum flow from node <5> to node <3> is 
+
+>> choices:
+
+('[35, 0, 34, 26]',)
+
+>> label:
+
+3
+
+####### sample 4 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<1>, <6>, weight:7), (<1>, <10>, weight:6), (<1>, <4>, weight:4), (<1>, <7>, weight:0), (<6>, <8>, weight:6), (<10>, <1>, weight:4), (<10>, <9>, weight:2), (<10>, <8>, weight:9), (<4>, <1>, weight:6), (<4>, <0>, weight:9), (<4>, <3>, weight:1), (<8>, <6>, weight:3), (<8>, <10>, weight:10), (<9>, <5>, weight:7), (<9>, <2>, weight:10), (<9>, <0>, weight:6), (<9>, <3>, weight:7), (<9>, <10>, weight:0), (<0>, <3>, weight:3), (<5>, <7>, weight:2), (<5>, <1>, weight:10), (<5>, <3>, weight:7), (<7>, <6>, weight:8), (<7>, <4>, weight:6), (<7>, <1>, weight:10)]
+
+>> graph_adj:
+
+{<1>: [(<6>, weight:7), (<10>, weight:6), (<4>, weight:4), (<7>, weight:0)],
+<6>: [(<8>, weight:6)],
+<10>: [(<1>, weight:4), (<9>, weight:2), (<8>, weight:9)],
+<4>: [(<1>, weight:6), (<0>, weight:9), (<3>, weight:1)],
+<8>: [(<6>, weight:3), (<10>, weight:10)],
+<9>: [(<5>, weight:7), (<2>, weight:10), (<0>, weight:6), (<3>, weight:7), (<10>, weight:0)],
+<0>: [(<3>, weight:3)],
+<3>: [],
+<5>: [(<7>, weight:2), (<1>, weight:10), (<3>, weight:7)],
+<2>: [],
+<7>: [(<6>, weight:8), (<4>, weight:6), (<1>, weight:10)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <6> (weight: 7), <10> (weight: 6), <4> (weight: 4), <7> (weight: 0).
+Node <6> is connected to node <8> (weight: 6).
+Node <10> is connected to nodes <1> (weight: 4), <9> (weight: 2), <8> (weight: 9).
+Node <4> is connected to nodes <1> (weight: 6), <0> (weight: 9), <3> (weight: 1).
+Node <8> is connected to nodes <6> (weight: 3), <10> (weight: 10).
+Node <9> is connected to nodes <5> (weight: 7), <2> (weight: 10), <0> (weight: 6), <3> (weight: 7), <10> (weight: 0).
+Node <0> is connected to node <3> (weight: 3).
+Node <5> is connected to nodes <7> (weight: 2), <1> (weight: 10), <3> (weight: 7).
+Node <7> is connected to nodes <6> (weight: 8), <4> (weight: 6), <1> (weight: 10).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+25
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <7> and node <9> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+2
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<7>, <1>, <10>, <9>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 0+2=2;
+Thus, the maximum flow from node <7> to node <9> is 
+
+>> choices:
+
+('[3, 7, 2, 0]',)
+
+>> label:
+
+2
+
+####### sample 5 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<14>, <3>, weight:5), (<3>, <11>, weight:5), (<3>, <14>, weight:3), (<3>, <12>, weight:2), (<3>, <2>, weight:9), (<11>, <3>, weight:9), (<4>, <10>, weight:1), (<1>, <9>, weight:8), (<1>, <10>, weight:8), (<1>, <13>, weight:5), (<1>, <0>, weight:0), (<9>, <11>, weight:6), (<9>, <8>, weight:1), (<9>, <5>, weight:0), (<13>, <2>, weight:9), (<8>, <4>, weight:10), (<8>, <9>, weight:5), (<8>, <0>, weight:10), (<0>, <2>, weight:4), (<0>, <1>, weight:8), (<0>, <8>, weight:0), (<7>, <1>, weight:6), (<5>, <13>, weight:9), (<5>, <2>, weight:10), (<5>, <9>, weight:5), (<5>, <3>, weight:6), (<6>, <8>, weight:3), (<6>, <1>, weight:7)]
+
+>> graph_adj:
+
+{<14>: [(<3>, weight:5)],
+<3>: [(<11>, weight:5), (<14>, weight:3), (<12>, weight:2), (<2>, weight:9)],
+<11>: [(<3>, weight:9)],
+<12>: [],
+<2>: [],
+<4>: [(<10>, weight:1)],
+<10>: [],
+<1>: [(<9>, weight:8), (<10>, weight:8), (<13>, weight:5), (<0>, weight:0)],
+<9>: [(<11>, weight:6), (<8>, weight:1), (<5>, weight:0)],
+<13>: [(<2>, weight:9)],
+<8>: [(<4>, weight:10), (<9>, weight:5), (<0>, weight:10)],
+<0>: [(<2>, weight:4), (<1>, weight:8), (<8>, weight:0)],
+<7>: [(<1>, weight:6)],
+<5>: [(<13>, weight:9), (<2>, weight:10), (<9>, weight:5), (<3>, weight:6)],
+<6>: [(<8>, weight:3), (<1>, weight:7)]}
+
+>> graph_nl:
+
+Node <14> is connected to node <3> (weight: 5).
+Node <3> is connected to nodes <11> (weight: 5), <14> (weight: 3), <12> (weight: 2), <2> (weight: 9).
+Node <11> is connected to node <3> (weight: 9).
+Node <4> is connected to node <10> (weight: 1).
+Node <1> is connected to nodes <9> (weight: 8), <10> (weight: 8), <13> (weight: 5), <0> (weight: 0).
+Node <9> is connected to nodes <11> (weight: 6), <8> (weight: 1), <5> (weight: 0).
+Node <13> is connected to node <2> (weight: 9).
+Node <8> is connected to nodes <4> (weight: 10), <9> (weight: 5), <0> (weight: 10).
+Node <0> is connected to nodes <2> (weight: 4), <1> (weight: 8), <8> (weight: 0).
+Node <7> is connected to node <1> (weight: 6).
+Node <5> is connected to nodes <13> (weight: 9), <2> (weight: 10), <9> (weight: 5), <3> (weight: 6).
+Node <6> is connected to nodes <8> (weight: 3), <1> (weight: 7).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+
+>> num_nodes:
+
+15
+
+>> num_edges:
+
+28
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <5> and node <1> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<5>, <9>, <8>, <0>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 0+1=1;
+Thus, the maximum flow from node <5> to node <1> is 
+
+>> choices:
+
+('[1, 11, 7, 0]',)
+
+>> label:
+
+0
+
+####### sample 6 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<4>, <7>, weight:6), (<4>, <2>, weight:6), (<7>, <0>, weight:8), (<7>, <8>, weight:5), (<7>, <4>, weight:10), (<7>, <9>, weight:0), (<2>, <6>, weight:4), (<2>, <9>, weight:1), (<2>, <7>, weight:1), (<2>, <3>, weight:9), (<2>, <0>, weight:0), (<0>, <2>, weight:8), (<0>, <4>, weight:3), (<0>, <7>, weight:8), (<0>, <3>, weight:10), (<8>, <3>, weight:7), (<8>, <5>, weight:9), (<6>, <1>, weight:10), (<6>, <7>, weight:10), (<6>, <2>, weight:0), (<9>, <7>, weight:2), (<3>, <0>, weight:6), (<3>, <8>, weight:1), (<3>, <4>, weight:9), (<1>, <3>, weight:5), (<1>, <0>, weight:2), (<1>, <8>, weight:7), (<5>, <8>, weight:6), (<5>, <4>, weight:5), (<5>, <0>, weight:1)]
+
+>> graph_adj:
+
+{<4>: [(<7>, weight:6), (<2>, weight:6)],
+<7>: [(<0>, weight:8), (<8>, weight:5), (<4>, weight:10), (<9>, weight:0)],
+<2>: [(<6>, weight:4), (<9>, weight:1), (<7>, weight:1), (<3>, weight:9), (<0>, weight:0)],
+<0>: [(<2>, weight:8), (<4>, weight:3), (<7>, weight:8), (<3>, weight:10)],
+<8>: [(<3>, weight:7), (<5>, weight:9)],
+<6>: [(<1>, weight:10), (<7>, weight:10), (<2>, weight:0)],
+<9>: [(<7>, weight:2)],
+<3>: [(<0>, weight:6), (<8>, weight:1), (<4>, weight:9)],
+<1>: [(<3>, weight:5), (<0>, weight:2), (<8>, weight:7)],
+<5>: [(<8>, weight:6), (<4>, weight:5), (<0>, weight:1)]}
+
+>> graph_nl:
+
+Node <4> is connected to nodes <7> (weight: 6), <2> (weight: 6).
+Node <7> is connected to nodes <0> (weight: 8), <8> (weight: 5), <4> (weight: 10), <9> (weight: 0).
+Node <2> is connected to nodes <6> (weight: 4), <9> (weight: 1), <7> (weight: 1), <3> (weight: 9), <0> (weight: 0).
+Node <0> is connected to nodes <2> (weight: 8), <4> (weight: 3), <7> (weight: 8), <3> (weight: 10).
+Node <8> is connected to nodes <3> (weight: 7), <5> (weight: 9).
+Node <6> is connected to nodes <1> (weight: 10), <7> (weight: 10), <2> (weight: 0).
+Node <9> is connected to node <7> (weight: 2).
+Node <3> is connected to nodes <0> (weight: 6), <8> (weight: 1), <4> (weight: 9).
+Node <1> is connected to nodes <3> (weight: 5), <0> (weight: 2), <8> (weight: 7).
+Node <5> is connected to nodes <8> (weight: 6), <4> (weight: 5), <0> (weight: 1).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>]
+
+>> num_nodes:
+
+10
+
+>> num_edges:
+
+30
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <9> and node <6> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+2
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<9>, <7>, <0>, <2>, <6>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 0+2=2;
+Thus, the maximum flow from node <9> to node <6> is 
+
+>> choices:
+
+('[6, 0, 2, 10]',)
+
+>> label:
+
+2
+
+####### sample 7 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<1>, <8>, weight:6), (<1>, <10>, weight:2), (<1>, <4>, weight:4), (<1>, <2>, weight:6), (<1>, <6>, weight:0), (<8>, <10>, weight:8), (<8>, <0>, weight:5), (<8>, <1>, weight:6), (<8>, <6>, weight:4), (<8>, <9>, weight:0), (<10>, <6>, weight:8), (<4>, <8>, weight:10), (<4>, <0>, weight:7), (<2>, <8>, weight:6), (<2>, <12>, weight:4), (<2>, <9>, weight:1), (<2>, <0>, weight:1), (<2>, <3>, weight:3), (<0>, <5>, weight:4), (<0>, <1>, weight:7), (<0>, <10>, weight:3), (<0>, <9>, weight:10), (<6>, <10>, weight:9), (<6>, <12>, weight:10), (<6>, <9>, weight:9), (<6>, <7>, weight:5), (<6>, <1>, weight:6), (<12>, <2>, weight:1), (<12>, <6>, weight:1), (<9>, <8>, weight:7), (<9>, <10>, weight:9), (<9>, <6>, weight:0), (<3>, <5>, weight:6), (<3>, <2>, weight:8), (<3>, <12>, weight:2), (<3>, <4>, weight:5), (<7>, <5>, weight:1), (<7>, <10>, weight:8), (<7>, <11>, weight:7), (<7>, <4>, weight:1), (<5>, <6>, weight:5), (<5>, <9>, weight:2), (<5>, <3>, weight:5), (<11>, <3>, weight:3), (<11>, <5>, weight:10)]
+
+>> graph_adj:
+
+{<1>: [(<8>, weight:6), (<10>, weight:2), (<4>, weight:4), (<2>, weight:6), (<6>, weight:0)],
+<8>: [(<10>, weight:8), (<0>, weight:5), (<1>, weight:6), (<6>, weight:4), (<9>, weight:0)],
+<10>: [(<6>, weight:8)],
+<4>: [(<8>, weight:10), (<0>, weight:7)],
+<2>: [(<8>, weight:6), (<12>, weight:4), (<9>, weight:1), (<0>, weight:1), (<3>, weight:3)],
+<0>: [(<5>, weight:4), (<1>, weight:7), (<10>, weight:3), (<9>, weight:10)],
+<6>: [(<10>, weight:9), (<12>, weight:10), (<9>, weight:9), (<7>, weight:5), (<1>, weight:6)],
+<12>: [(<2>, weight:1), (<6>, weight:1)],
+<9>: [(<8>, weight:7), (<10>, weight:9), (<6>, weight:0)],
+<3>: [(<5>, weight:6), (<2>, weight:8), (<12>, weight:2), (<4>, weight:5)],
+<7>: [(<5>, weight:1), (<10>, weight:8), (<11>, weight:7), (<4>, weight:1)],
+<5>: [(<6>, weight:5), (<9>, weight:2), (<3>, weight:5)],
+<11>: [(<3>, weight:3), (<5>, weight:10)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <8> (weight: 6), <10> (weight: 2), <4> (weight: 4), <2> (weight: 6), <6> (weight: 0).
+Node <8> is connected to nodes <10> (weight: 8), <0> (weight: 5), <1> (weight: 6), <6> (weight: 4), <9> (weight: 0).
+Node <10> is connected to node <6> (weight: 8).
+Node <4> is connected to nodes <8> (weight: 10), <0> (weight: 7).
+Node <2> is connected to nodes <8> (weight: 6), <12> (weight: 4), <9> (weight: 1), <0> (weight: 1), <3> (weight: 3).
+Node <0> is connected to nodes <5> (weight: 4), <1> (weight: 7), <10> (weight: 3), <9> (weight: 10).
+Node <6> is connected to nodes <10> (weight: 9), <12> (weight: 10), <9> (weight: 9), <7> (weight: 5), <1> (weight: 6).
+Node <12> is connected to nodes <2> (weight: 1), <6> (weight: 1).
+Node <9> is connected to nodes <8> (weight: 7), <10> (weight: 9), <6> (weight: 0).
+Node <3> is connected to nodes <5> (weight: 6), <2> (weight: 8), <12> (weight: 2), <4> (weight: 5).
+Node <7> is connected to nodes <5> (weight: 1), <10> (weight: 8), <11> (weight: 7), <4> (weight: 1).
+Node <5> is connected to nodes <6> (weight: 5), <9> (weight: 2), <3> (weight: 5).
+Node <11> is connected to nodes <3> (weight: 3), <5> (weight: 10).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>]
+
+>> num_nodes:
+
+13
+
+>> num_edges:
+
+45
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <10> and node <1> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+8
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<10>, <6>, <1>] with minimum residual capacity of 6. Updated the flow along this path. Total flow: 0+6=6;
+Found augmenting path: [<10>, <6>, <9>, <8>, <1>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 6+2=8;
+Thus, the maximum flow from node <10> to node <1> is 
+
+>> choices:
+
+('[0, 13, 15, 8]',)
+
+>> label:
+
+3
+
+####### sample 8 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<14>, <2>, weight:2), (<14>, <10>, weight:4), (<2>, <0>, weight:6), (<2>, <1>, weight:4), (<2>, <13>, weight:9), (<2>, <7>, weight:2), (<2>, <4>, weight:1), (<10>, <3>, weight:9), (<10>, <13>, weight:6), (<10>, <14>, weight:2), (<10>, <0>, weight:5), (<10>, <8>, weight:4), (<10>, <9>, weight:7), (<0>, <12>, weight:1), (<0>, <1>, weight:1), (<0>, <6>, weight:10), (<0>, <11>, weight:6), (<0>, <2>, weight:4), (<0>, <8>, weight:0), (<0>, <13>, weight:0), (<1>, <10>, weight:9), (<1>, <13>, weight:8), (<1>, <14>, weight:3), (<1>, <11>, weight:1), (<1>, <2>, weight:3), (<1>, <5>, weight:8), (<1>, <12>, weight:6), (<1>, <4>, weight:0), (<1>, <0>, weight:0), (<1>, <9>, weight:0), (<13>, <0>, weight:10), (<13>, <8>, weight:4), (<13>, <12>, weight:10), (<13>, <10>, weight:9), (<7>, <11>, weight:1), (<7>, <2>, weight:4), (<7>, <8>, weight:1), (<7>, <13>, weight:6), (<4>, <2>, weight:3), (<4>, <8>, weight:8), (<4>, <1>, weight:6), (<4>, <9>, weight:1), (<4>, <3>, weight:4), (<4>, <6>, weight:3), (<4>, <14>, weight:4), (<3>, <13>, weight:8), (<3>, <6>, weight:10), (<3>, <5>, weight:1), (<3>, <12>, weight:2), (<3>, <9>, weight:3), (<8>, <10>, weight:1), (<8>, <13>, weight:4), (<8>, <6>, weight:4), (<8>, <4>, weight:7), (<8>, <0>, weight:2), (<9>, <13>, weight:8), (<9>, <6>, weight:8), (<9>, <8>, weight:6), (<9>, <5>, weight:7), (<9>, <12>, weight:10), (<9>, <1>, weight:6), (<9>, <10>, weight:0), (<6>, <0>, weight:2), (<6>, <12>, weight:3), (<6>, <9>, weight:6), (<6>, <10>, weight:1), (<6>, <8>, weight:0), (<11>, <2>, weight:1), (<11>, <5>, weight:9), (<11>, <12>, weight:4), (<11>, <9>, weight:7), (<11>, <10>, weight:4), (<11>, <6>, weight:9), (<11>, <4>, weight:9), (<5>, <3>, weight:3), (<5>, <13>, weight:6), (<5>, <11>, weight:4), (<5>, <0>, weight:2), (<5>, <8>, weight:2), (<12>, <9>, weight:6), (<12>, <3>, weight:9), (<12>, <13>, weight:5), (<12>, <6>, weight:4), (<12>, <14>, weight:7), (<12>, <11>, weight:4)]
+
+>> graph_adj:
+
+{<14>: [(<2>, weight:2), (<10>, weight:4)],
+<2>: [(<0>, weight:6), (<1>, weight:4), (<13>, weight:9), (<7>, weight:2), (<4>, weight:1)],
+<10>: [(<3>, weight:9), (<13>, weight:6), (<14>, weight:2), (<0>, weight:5), (<8>, weight:4), (<9>, weight:7)],
+<0>: [(<12>, weight:1), (<1>, weight:1), (<6>, weight:10), (<11>, weight:6), (<2>, weight:4), (<8>, weight:0), (<13>, weight:0)],
+<1>: [(<10>, weight:9), (<13>, weight:8), (<14>, weight:3), (<11>, weight:1), (<2>, weight:3), (<5>, weight:8), (<12>, weight:6), (<4>, weight:0), (<0>, weight:0), (<9>, weight:0)],
+<13>: [(<0>, weight:10), (<8>, weight:4), (<12>, weight:10), (<10>, weight:9)],
+<7>: [(<11>, weight:1), (<2>, weight:4), (<8>, weight:1), (<13>, weight:6)],
+<4>: [(<2>, weight:3), (<8>, weight:8), (<1>, weight:6), (<9>, weight:1), (<3>, weight:4), (<6>, weight:3), (<14>, weight:4)],
+<3>: [(<13>, weight:8), (<6>, weight:10), (<5>, weight:1), (<12>, weight:2), (<9>, weight:3)],
+<8>: [(<10>, weight:1), (<13>, weight:4), (<6>, weight:4), (<4>, weight:7), (<0>, weight:2)],
+<9>: [(<13>, weight:8), (<6>, weight:8), (<8>, weight:6), (<5>, weight:7), (<12>, weight:10), (<1>, weight:6), (<10>, weight:0)],
+<6>: [(<0>, weight:2), (<12>, weight:3), (<9>, weight:6), (<10>, weight:1), (<8>, weight:0)],
+<11>: [(<2>, weight:1), (<5>, weight:9), (<12>, weight:4), (<9>, weight:7), (<10>, weight:4), (<6>, weight:9), (<4>, weight:9)],
+<5>: [(<3>, weight:3), (<13>, weight:6), (<11>, weight:4), (<0>, weight:2), (<8>, weight:2)],
+<12>: [(<9>, weight:6), (<3>, weight:9), (<13>, weight:5), (<6>, weight:4), (<14>, weight:7), (<11>, weight:4)]}
+
+>> graph_nl:
+
+Node <14> is connected to nodes <2> (weight: 2), <10> (weight: 4).
+Node <2> is connected to nodes <0> (weight: 6), <1> (weight: 4), <13> (weight: 9), <7> (weight: 2), <4> (weight: 1).
+Node <10> is connected to nodes <3> (weight: 9), <13> (weight: 6), <14> (weight: 2), <0> (weight: 5), <8> (weight: 4), <9> (weight: 7).
+Node <0> is connected to nodes <12> (weight: 1), <1> (weight: 1), <6> (weight: 10), <11> (weight: 6), <2> (weight: 4), <8> (weight: 0), <13> (weight: 0).
+Node <1> is connected to nodes <10> (weight: 9), <13> (weight: 8), <14> (weight: 3), <11> (weight: 1), <2> (weight: 3), <5> (weight: 8), <12> (weight: 6), <4> (weight: 0), <0> (weight: 0), <9> (weight: 0).
+Node <13> is connected to nodes <0> (weight: 10), <8> (weight: 4), <12> (weight: 10), <10> (weight: 9).
+Node <7> is connected to nodes <11> (weight: 1), <2> (weight: 4), <8> (weight: 1), <13> (weight: 6).
+Node <4> is connected to nodes <2> (weight: 3), <8> (weight: 8), <1> (weight: 6), <9> (weight: 1), <3> (weight: 4), <6> (weight: 3), <14> (weight: 4).
+Node <3> is connected to nodes <13> (weight: 8), <6> (weight: 10), <5> (weight: 1), <12> (weight: 2), <9> (weight: 3).
+Node <8> is connected to nodes <10> (weight: 1), <13> (weight: 4), <6> (weight: 4), <4> (weight: 7), <0> (weight: 2).
+Node <9> is connected to nodes <13> (weight: 8), <6> (weight: 8), <8> (weight: 6), <5> (weight: 7), <12> (weight: 10), <1> (weight: 6), <10> (weight: 0).
+Node <6> is connected to nodes <0> (weight: 2), <12> (weight: 3), <9> (weight: 6), <10> (weight: 1), <8> (weight: 0).
+Node <11> is connected to nodes <2> (weight: 1), <5> (weight: 9), <12> (weight: 4), <9> (weight: 7), <10> (weight: 4), <6> (weight: 9), <4> (weight: 9).
+Node <5> is connected to nodes <3> (weight: 3), <13> (weight: 6), <11> (weight: 4), <0> (weight: 2), <8> (weight: 2).
+Node <12> is connected to nodes <9> (weight: 6), <3> (weight: 9), <13> (weight: 5), <6> (weight: 4), <14> (weight: 7), <11> (weight: 4).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+
+>> num_nodes:
+
+15
+
+>> num_edges:
+
+85
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <8> and node <1> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+17
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<8>, <4>, <1>] with minimum residual capacity of 6. Updated the flow along this path. Total flow: 0+6=6;
+Found augmenting path: [<8>, <0>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 6+1=7;
+Found augmenting path: [<8>, <10>, <9>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 7+1=8;
+Found augmenting path: [<8>, <6>, <9>, <1>] with minimum residual capacity of 4. Updated the flow along this path. Total flow: 8+4=12;
+Found augmenting path: [<8>, <4>, <2>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 12+1=13;
+Found augmenting path: [<8>, <0>, <2>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 13+1=14;
+Found augmenting path: [<8>, <13>, <0>, <2>, <1>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 14+2=16;
+Found augmenting path: [<8>, <13>, <12>, <9>, <1>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 16+1=17;
+Thus, the maximum flow from node <8> to node <1> is 
+
+>> choices:
+
+('[26, 0, 21, 17]',)
+
+>> label:
+
+3
+
+####### sample 9 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<1>, <3>, weight:10), (<3>, <2>, weight:4), (<2>, <3>, weight:1), (<2>, <1>, weight:5), (<2>, <0>, weight:5), (<6>, <7>, weight:1), (<6>, <5>, weight:4), (<6>, <4>, weight:3), (<6>, <3>, weight:2), (<6>, <1>, weight:1), (<7>, <5>, weight:3), (<7>, <4>, weight:4), (<5>, <4>, weight:4), (<5>, <2>, weight:2), (<5>, <3>, weight:1), (<5>, <6>, weight:2), (<4>, <0>, weight:1), (<4>, <6>, weight:4)]
+
+>> graph_adj:
+
+{<1>: [(<3>, weight:10)],
+<3>: [(<2>, weight:4)],
+<2>: [(<3>, weight:1), (<1>, weight:5), (<0>, weight:5)],
+<6>: [(<7>, weight:1), (<5>, weight:4), (<4>, weight:3), (<3>, weight:2), (<1>, weight:1)],
+<7>: [(<5>, weight:3), (<4>, weight:4)],
+<5>: [(<4>, weight:4), (<2>, weight:2), (<3>, weight:1), (<6>, weight:2)],
+<4>: [(<0>, weight:1), (<6>, weight:4)],
+<0>: []}
+
+>> graph_nl:
+
+Node <1> is connected to node <3> (weight: 10).
+Node <3> is connected to node <2> (weight: 4).
+Node <2> is connected to nodes <3> (weight: 1), <1> (weight: 5), <0> (weight: 5).
+Node <6> is connected to nodes <7> (weight: 1), <5> (weight: 4), <4> (weight: 3), <3> (weight: 2), <1> (weight: 1).
+Node <7> is connected to nodes <5> (weight: 3), <4> (weight: 4).
+Node <5> is connected to nodes <4> (weight: 4), <2> (weight: 2), <3> (weight: 1), <6> (weight: 2).
+Node <4> is connected to nodes <0> (weight: 1), <6> (weight: 4).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>]
+
+>> num_nodes:
+
+8
+
+>> num_edges:
+
+18
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <4> and node <6> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+4
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<4>, <6>] with minimum residual capacity of 4. Updated the flow along this path. Total flow: 0+4=4;
+Thus, the maximum flow from node <4> to node <6> is 
+
+>> choices:
+
+('[4, 5, 0, 6]',)
+
+>> label:
+
+0
+
+####### sample 10 #######
+
+>> task:
+
+maximum_flow
+
+>> graph:
+
+[(<8>, <4>, weight:1), (<8>, <3>, weight:0), (<4>, <2>, weight:4), (<4>, <9>, weight:9), (<4>, <8>, weight:0), (<2>, <3>, weight:8), (<2>, <6>, weight:6), (<2>, <4>, weight:3), (<2>, <10>, weight:2), (<9>, <0>, weight:4), (<9>, <1>, weight:8), (<9>, <10>, weight:4), (<9>, <2>, weight:10), (<9>, <7>, weight:7), (<5>, <10>, weight:6), (<5>, <2>, weight:8), (<5>, <7>, weight:10), (<5>, <8>, weight:9), (<10>, <2>, weight:5), (<10>, <3>, weight:6), (<10>, <9>, weight:10), (<10>, <0>, weight:1), (<10>, <4>, weight:1), (<10>, <6>, weight:0), (<7>, <8>, weight:6), (<7>, <6>, weight:6), (<7>, <0>, weight:8), (<7>, <3>, weight:9), (<3>, <8>, weight:3), (<3>, <0>, weight:7), (<3>, <1>, weight:9), (<3>, <10>, weight:6), (<0>, <1>, weight:7), (<0>, <3>, weight:8), (<0>, <7>, weight:10), (<0>, <8>, weight:5), (<0>, <6>, weight:6), (<0>, <9>, weight:6), (<6>, <1>, weight:1), (<6>, <10>, weight:2), (<6>, <2>, weight:1), (<6>, <7>, weight:3), (<6>, <8>, weight:9), (<6>, <0>, weight:0), (<1>, <4>, weight:6), (<1>, <3>, weight:5)]
+
+>> graph_adj:
+
+{<8>: [(<4>, weight:1), (<3>, weight:0)],
+<4>: [(<2>, weight:4), (<9>, weight:9), (<8>, weight:0)],
+<2>: [(<3>, weight:8), (<6>, weight:6), (<4>, weight:3), (<10>, weight:2)],
+<9>: [(<0>, weight:4), (<1>, weight:8), (<10>, weight:4), (<2>, weight:10), (<7>, weight:7)],
+<5>: [(<10>, weight:6), (<2>, weight:8), (<7>, weight:10), (<8>, weight:9)],
+<10>: [(<2>, weight:5), (<3>, weight:6), (<9>, weight:10), (<0>, weight:1), (<4>, weight:1), (<6>, weight:0)],
+<7>: [(<8>, weight:6), (<6>, weight:6), (<0>, weight:8), (<3>, weight:9)],
+<3>: [(<8>, weight:3), (<0>, weight:7), (<1>, weight:9), (<10>, weight:6)],
+<0>: [(<1>, weight:7), (<3>, weight:8), (<7>, weight:10), (<8>, weight:5), (<6>, weight:6), (<9>, weight:6)],
+<6>: [(<1>, weight:1), (<10>, weight:2), (<2>, weight:1), (<7>, weight:3), (<8>, weight:9), (<0>, weight:0)],
+<1>: [(<4>, weight:6), (<3>, weight:5)]}
+
+>> graph_nl:
+
+Node <8> is connected to nodes <4> (weight: 1), <3> (weight: 0).
+Node <4> is connected to nodes <2> (weight: 4), <9> (weight: 9), <8> (weight: 0).
+Node <2> is connected to nodes <3> (weight: 8), <6> (weight: 6), <4> (weight: 3), <10> (weight: 2).
+Node <9> is connected to nodes <0> (weight: 4), <1> (weight: 8), <10> (weight: 4), <2> (weight: 10), <7> (weight: 7).
+Node <5> is connected to nodes <10> (weight: 6), <2> (weight: 8), <7> (weight: 10), <8> (weight: 9).
+Node <10> is connected to nodes <2> (weight: 5), <3> (weight: 6), <9> (weight: 10), <0> (weight: 1), <4> (weight: 1), <6> (weight: 0).
+Node <7> is connected to nodes <8> (weight: 6), <6> (weight: 6), <0> (weight: 8), <3> (weight: 9).
+Node <3> is connected to nodes <8> (weight: 3), <0> (weight: 7), <1> (weight: 9), <10> (weight: 6).
+Node <0> is connected to nodes <1> (weight: 7), <3> (weight: 8), <7> (weight: 10), <8> (weight: 5), <6> (weight: 6), <9> (weight: 6).
+Node <6> is connected to nodes <1> (weight: 1), <10> (weight: 2), <2> (weight: 1), <7> (weight: 3), <8> (weight: 9), <0> (weight: 0).
+Node <1> is connected to nodes <4> (weight: 6), <3> (weight: 5).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+46
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the maximum flow between node <3> and node <10> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.
+
+>> answer:
+
+14
+
+>> steps:
+
+Let's solve it step by step. We can use the Edmonds-Karp algorithm. The paths with the corresponding capacity are as follows:
+Found augmenting path: [<3>, <10>] with minimum residual capacity of 6. Updated the flow along this path. Total flow: 0+6=6;
+Found augmenting path: [<3>, <0>, <6>, <10>] with minimum residual capacity of 2. Updated the flow along this path. Total flow: 6+2=8;
+Found augmenting path: [<3>, <0>, <9>, <10>] with minimum residual capacity of 4. Updated the flow along this path. Total flow: 8+4=12;
+Found augmenting path: [<3>, <8>, <4>, <2>, <10>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 12+1=13;
+Found augmenting path: [<3>, <0>, <6>, <2>, <10>] with minimum residual capacity of 1. Updated the flow along this path. Total flow: 13+1=14;
+Thus, the maximum flow from node <3> to node <10> is 
+
+>> choices:
+
+('[14, 0, 22, 16]',)
+
+>> label:
+
+0
+

@@ -1,0 +1,897 @@
+####### sample 1 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<7>, <12>, weight:8), (<7>, <2>, weight:2), (<7>, <9>, weight:8), (<7>, <6>, weight:9), (<7>, <4>, weight:5), (<7>, <3>, weight:7), (<7>, <0>, weight:2), (<7>, <10>, weight:3), (<7>, <11>, weight:4), (<12>, <5>, weight:9), (<12>, <9>, weight:5), (<12>, <6>, weight:5), (<12>, <1>, weight:5), (<12>, <4>, weight:6), (<12>, <10>, weight:7), (<12>, <11>, weight:10), (<2>, <5>, weight:9), (<2>, <9>, weight:9), (<2>, <13>, weight:9), (<2>, <1>, weight:6), (<2>, <4>, weight:1), (<2>, <3>, weight:1), (<2>, <0>, weight:4), (<2>, <10>, weight:2), (<2>, <11>, weight:7), (<9>, <5>, weight:2), (<9>, <8>, weight:4), (<9>, <6>, weight:9), (<9>, <1>, weight:3), (<9>, <4>, weight:5), (<9>, <0>, weight:1), (<9>, <10>, weight:10), (<9>, <11>, weight:6), (<6>, <5>, weight:1), (<6>, <1>, weight:9), (<6>, <3>, weight:5), (<6>, <0>, weight:10), (<6>, <10>, weight:6), (<4>, <5>, weight:1), (<4>, <1>, weight:9), (<4>, <3>, weight:3), (<4>, <10>, weight:8), (<4>, <11>, weight:1), (<3>, <5>, weight:8), (<3>, <8>, weight:9), (<3>, <13>, weight:5), (<3>, <1>, weight:1), (<3>, <0>, weight:9), (<3>, <10>, weight:5), (<3>, <11>, weight:8), (<0>, <5>, weight:10), (<0>, <8>, weight:4), (<0>, <1>, weight:2), (<0>, <10>, weight:8), (<0>, <11>, weight:9), (<10>, <5>, weight:3), (<10>, <8>, weight:1), (<10>, <13>, weight:8), (<10>, <1>, weight:8), (<10>, <11>, weight:3), (<11>, <5>, weight:8), (<11>, <8>, weight:4), (<5>, <8>, weight:2), (<5>, <13>, weight:8), (<5>, <1>, weight:2), (<1>, <8>, weight:3), (<1>, <13>, weight:9), (<13>, <8>, weight:2)]
+
+>> graph_adj:
+
+{<7>: [(<12>, weight:8), (<2>, weight:2), (<9>, weight:8), (<6>, weight:9), (<4>, weight:5), (<3>, weight:7), (<0>, weight:2), (<10>, weight:3), (<11>, weight:4)],
+<12>: [(<7>, weight:8), (<5>, weight:9), (<9>, weight:5), (<6>, weight:5), (<1>, weight:5), (<4>, weight:6), (<10>, weight:7), (<11>, weight:10)],
+<2>: [(<7>, weight:2), (<5>, weight:9), (<9>, weight:9), (<13>, weight:9), (<1>, weight:6), (<4>, weight:1), (<3>, weight:1), (<0>, weight:4), (<10>, weight:2), (<11>, weight:7)],
+<9>: [(<7>, weight:8), (<12>, weight:5), (<2>, weight:9), (<5>, weight:2), (<8>, weight:4), (<6>, weight:9), (<1>, weight:3), (<4>, weight:5), (<0>, weight:1), (<10>, weight:10), (<11>, weight:6)],
+<6>: [(<7>, weight:9), (<12>, weight:5), (<9>, weight:9), (<5>, weight:1), (<1>, weight:9), (<3>, weight:5), (<0>, weight:10), (<10>, weight:6)],
+<4>: [(<7>, weight:5), (<12>, weight:6), (<2>, weight:1), (<9>, weight:5), (<5>, weight:1), (<1>, weight:9), (<3>, weight:3), (<10>, weight:8), (<11>, weight:1)],
+<3>: [(<7>, weight:7), (<2>, weight:1), (<6>, weight:5), (<4>, weight:3), (<5>, weight:8), (<8>, weight:9), (<13>, weight:5), (<1>, weight:1), (<0>, weight:9), (<10>, weight:5), (<11>, weight:8)],
+<0>: [(<7>, weight:2), (<2>, weight:4), (<9>, weight:1), (<6>, weight:10), (<3>, weight:9), (<5>, weight:10), (<8>, weight:4), (<1>, weight:2), (<10>, weight:8), (<11>, weight:9)],
+<10>: [(<7>, weight:3), (<12>, weight:7), (<2>, weight:2), (<9>, weight:10), (<6>, weight:6), (<4>, weight:8), (<3>, weight:5), (<0>, weight:8), (<5>, weight:3), (<8>, weight:1), (<13>, weight:8), (<1>, weight:8), (<11>, weight:3)],
+<11>: [(<7>, weight:4), (<12>, weight:10), (<2>, weight:7), (<9>, weight:6), (<4>, weight:1), (<3>, weight:8), (<0>, weight:9), (<10>, weight:3), (<5>, weight:8), (<8>, weight:4)],
+<5>: [(<12>, weight:9), (<2>, weight:9), (<9>, weight:2), (<6>, weight:1), (<4>, weight:1), (<3>, weight:8), (<0>, weight:10), (<10>, weight:3), (<11>, weight:8), (<8>, weight:2), (<13>, weight:8), (<1>, weight:2)],
+<1>: [(<12>, weight:5), (<2>, weight:6), (<9>, weight:3), (<6>, weight:9), (<4>, weight:9), (<3>, weight:1), (<0>, weight:2), (<10>, weight:8), (<5>, weight:2), (<8>, weight:3), (<13>, weight:9)],
+<13>: [(<2>, weight:9), (<3>, weight:5), (<10>, weight:8), (<5>, weight:8), (<1>, weight:9), (<8>, weight:2)],
+<8>: [(<9>, weight:4), (<3>, weight:9), (<0>, weight:4), (<10>, weight:1), (<11>, weight:4), (<5>, weight:2), (<1>, weight:3), (<13>, weight:2)]}
+
+>> graph_nl:
+
+Node <7> is connected to nodes <12>, <2>, <9>, <6>, <4>, <3>, <0>, <10>, <11>.
+Node <12> is connected to nodes <7>, <5>, <9>, <6>, <1>, <4>, <10>, <11>.
+Node <2> is connected to nodes <7>, <5>, <9>, <13>, <1>, <4>, <3>, <0>, <10>, <11>.
+Node <9> is connected to nodes <7>, <12>, <2>, <5>, <8>, <6>, <1>, <4>, <0>, <10>, <11>.
+Node <6> is connected to nodes <7>, <12>, <9>, <5>, <1>, <3>, <0>, <10>.
+Node <4> is connected to nodes <7>, <12>, <2>, <9>, <5>, <1>, <3>, <10>, <11>.
+Node <3> is connected to nodes <7>, <2>, <6>, <4>, <5>, <8>, <13>, <1>, <0>, <10>, <11>.
+Node <0> is connected to nodes <7>, <2>, <9>, <6>, <3>, <5>, <8>, <1>, <10>, <11>.
+Node <10> is connected to nodes <7>, <12>, <2>, <9>, <6>, <4>, <3>, <0>, <5>, <8>, <13>, <1>, <11>.
+Node <11> is connected to nodes <7>, <12>, <2>, <9>, <4>, <3>, <0>, <10>, <5>, <8>.
+Node <5> is connected to nodes <12>, <2>, <9>, <6>, <4>, <3>, <0>, <10>, <11>, <8>, <13>, <1>.
+Node <1> is connected to nodes <12>, <2>, <9>, <6>, <4>, <3>, <0>, <10>, <5>, <8>, <13>.
+Node <13> is connected to nodes <2>, <3>, <10>, <5>, <1>, <8>.
+Node <8> is connected to nodes <9>, <3>, <0>, <10>, <11>, <5>, <1>, <13>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>]
+
+>> num_nodes:
+
+14
+
+>> num_edges:
+
+68
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+21
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <7>, weight:2).
+Collected nodes: <0>, <7>. The edge with minimum weight we find: (<7>, <11>, weight:1).
+Collected nodes: <0>, <7>, <11>. The edge with minimum weight we find: (<7>, <12>, weight:2).
+Collected nodes: <0>, <7>, <11>, <12>. The edge with minimum weight we find: (<12>, <9>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>. The edge with minimum weight we find: (<9>, <2>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>. The edge with minimum weight we find: (<2>, <6>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>. The edge with minimum weight we find: (<6>, <4>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>. The edge with minimum weight we find: (<6>, <1>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>, <1>. The edge with minimum weight we find: (<4>, <3>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>, <1>, <3>. The edge with minimum weight we find: (<2>, <5>, weight:2).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>, <1>, <3>, <5>. The edge with minimum weight we find: (<5>, <10>, weight:1).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>, <1>, <3>, <5>, <10>. The edge with minimum weight we find: (<10>, <8>, weight:2).
+Collected nodes: <0>, <7>, <11>, <12>, <9>, <2>, <6>, <4>, <1>, <3>, <5>, <10>, <8>. The edge with minimum weight we find: (<12>, <13>, weight:5).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[0, 21, 29, 25]',)
+
+>> label:
+
+1
+
+>> answer_tree:
+
+[(<0>, <7>, weight:2), (<7>, <11>, weight:1), (<7>, <12>, weight:2), (<12>, <9>, weight:1), (<9>, <2>, weight:1), (<2>, <6>, weight:1), (<6>, <4>, weight:1), (<6>, <1>, weight:1), (<4>, <3>, weight:1), (<2>, <5>, weight:2), (<5>, <10>, weight:1), (<10>, <8>, weight:2), (<12>, <13>, weight:5)]
+
+####### sample 2 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<1>, <7>, weight:9), (<1>, <5>, weight:7), (<1>, <3>, weight:7), (<7>, <0>, weight:7), (<5>, <2>, weight:10), (<3>, <6>, weight:3), (<3>, <4>, weight:1), (<0>, <6>, weight:6)]
+
+>> graph_adj:
+
+{<1>: [(<7>, weight:9), (<5>, weight:7), (<3>, weight:7)],
+<7>: [(<1>, weight:9), (<0>, weight:7)],
+<5>: [(<1>, weight:7), (<2>, weight:10)],
+<3>: [(<1>, weight:7), (<6>, weight:3), (<4>, weight:1)],
+<0>: [(<7>, weight:7), (<6>, weight:6)],
+<2>: [(<5>, weight:10)],
+<6>: [(<3>, weight:3), (<0>, weight:6)],
+<4>: [(<3>, weight:1)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <7>, <5>, <3>.
+Node <7> is connected to nodes <1>, <0>.
+Node <5> is connected to nodes <1>, <2>.
+Node <3> is connected to nodes <1>, <6>, <4>.
+Node <0> is connected to nodes <7>, <6>.
+Node <2> is connected to node <5>.
+Node <6> is connected to nodes <3>, <0>.
+Node <4> is connected to node <3>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>]
+
+>> num_nodes:
+
+8
+
+>> num_edges:
+
+8
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+41
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <3>, weight:1).
+Collected nodes: <0>, <3>. The edge with minimum weight we find: (<3>, <6>, weight:3).
+Collected nodes: <0>, <3>, <6>. The edge with minimum weight we find: (<6>, <1>, weight:6).
+Collected nodes: <0>, <3>, <6>, <1>. The edge with minimum weight we find: (<1>, <4>, weight:7).
+Collected nodes: <0>, <3>, <6>, <1>, <4>. The edge with minimum weight we find: (<3>, <7>, weight:7).
+Collected nodes: <0>, <3>, <6>, <1>, <4>, <7>. The edge with minimum weight we find: (<7>, <2>, weight:7).
+Collected nodes: <0>, <3>, <6>, <1>, <4>, <7>, <2>. The edge with minimum weight we find: (<2>, <5>, weight:10).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[42, 44, 41, 0]',)
+
+>> label:
+
+2
+
+>> answer_tree:
+
+[(<0>, <3>, weight:1), (<3>, <6>, weight:3), (<6>, <1>, weight:6), (<1>, <4>, weight:7), (<3>, <7>, weight:7), (<7>, <2>, weight:7), (<2>, <5>, weight:10)]
+
+####### sample 3 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<1>, <2>, weight:2), (<1>, <9>, weight:5), (<1>, <3>, weight:5), (<1>, <7>, weight:4), (<1>, <0>, weight:10), (<2>, <0>, weight:3), (<2>, <6>, weight:6), (<9>, <0>, weight:5), (<9>, <3>, weight:7), (<9>, <8>, weight:6), (<9>, <6>, weight:1), (<3>, <5>, weight:5), (<3>, <7>, weight:10), (<3>, <4>, weight:10), (<7>, <8>, weight:7), (<0>, <5>, weight:8), (<0>, <4>, weight:1), (<0>, <6>, weight:8), (<6>, <4>, weight:4), (<8>, <4>, weight:7)]
+
+>> graph_adj:
+
+{<1>: [(<2>, weight:2), (<9>, weight:5), (<3>, weight:5), (<7>, weight:4), (<0>, weight:10)],
+<2>: [(<1>, weight:2), (<0>, weight:3), (<6>, weight:6)],
+<9>: [(<1>, weight:5), (<0>, weight:5), (<3>, weight:7), (<8>, weight:6), (<6>, weight:1)],
+<3>: [(<1>, weight:5), (<9>, weight:7), (<5>, weight:5), (<7>, weight:10), (<4>, weight:10)],
+<7>: [(<1>, weight:4), (<3>, weight:10), (<8>, weight:7)],
+<0>: [(<1>, weight:10), (<2>, weight:3), (<9>, weight:5), (<5>, weight:8), (<4>, weight:1), (<6>, weight:8)],
+<6>: [(<2>, weight:6), (<9>, weight:1), (<0>, weight:8), (<4>, weight:4)],
+<8>: [(<9>, weight:6), (<7>, weight:7), (<4>, weight:7)],
+<5>: [(<3>, weight:5), (<0>, weight:8)],
+<4>: [(<3>, weight:10), (<0>, weight:1), (<6>, weight:4), (<8>, weight:7)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <2>, <9>, <3>, <7>, <0>.
+Node <2> is connected to nodes <1>, <0>, <6>.
+Node <9> is connected to nodes <1>, <0>, <3>, <8>, <6>.
+Node <3> is connected to nodes <1>, <9>, <5>, <7>, <4>.
+Node <7> is connected to nodes <1>, <3>, <8>.
+Node <0> is connected to nodes <1>, <2>, <9>, <5>, <4>, <6>.
+Node <6> is connected to nodes <2>, <9>, <0>, <4>.
+Node <8> is connected to nodes <9>, <7>, <4>.
+Node <5> is connected to nodes <3>, <0>.
+Node <4> is connected to nodes <3>, <0>, <6>, <8>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>]
+
+>> num_nodes:
+
+10
+
+>> num_edges:
+
+20
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+31
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <3>, weight:5).
+Collected nodes: <0>, <3>. The edge with minimum weight we find: (<3>, <2>, weight:5).
+Collected nodes: <0>, <3>, <2>. The edge with minimum weight we find: (<2>, <9>, weight:2).
+Collected nodes: <0>, <3>, <2>, <9>. The edge with minimum weight we find: (<9>, <1>, weight:3).
+Collected nodes: <0>, <3>, <2>, <9>, <1>. The edge with minimum weight we find: (<1>, <7>, weight:1).
+Collected nodes: <0>, <3>, <2>, <9>, <1>, <7>. The edge with minimum weight we find: (<2>, <8>, weight:4).
+Collected nodes: <0>, <3>, <2>, <9>, <1>, <7>, <8>. The edge with minimum weight we find: (<7>, <6>, weight:4).
+Collected nodes: <0>, <3>, <2>, <9>, <1>, <7>, <8>, <6>. The edge with minimum weight we find: (<6>, <4>, weight:1).
+Collected nodes: <0>, <3>, <2>, <9>, <1>, <7>, <8>, <6>, <4>. The edge with minimum weight we find: (<4>, <5>, weight:6).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[36, 31, 39, 0]',)
+
+>> label:
+
+1
+
+>> answer_tree:
+
+[(<0>, <3>, weight:5), (<3>, <2>, weight:5), (<2>, <9>, weight:2), (<9>, <1>, weight:3), (<1>, <7>, weight:1), (<2>, <8>, weight:4), (<7>, <6>, weight:4), (<6>, <4>, weight:1), (<4>, <5>, weight:6)]
+
+####### sample 4 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<7>, <0>, weight:6), (<7>, <1>, weight:4), (<7>, <5>, weight:10), (<7>, <3>, weight:2), (<7>, <4>, weight:10), (<7>, <2>, weight:5), (<7>, <8>, weight:9), (<0>, <6>, weight:4), (<0>, <1>, weight:5), (<0>, <5>, weight:3), (<0>, <3>, weight:1), (<0>, <4>, weight:4), (<0>, <2>, weight:6), (<1>, <6>, weight:2), (<1>, <5>, weight:9), (<1>, <3>, weight:4), (<1>, <4>, weight:7), (<5>, <6>, weight:6), (<5>, <3>, weight:8), (<5>, <2>, weight:6), (<5>, <8>, weight:1), (<3>, <4>, weight:8), (<3>, <2>, weight:2), (<3>, <8>, weight:3), (<4>, <2>, weight:5), (<4>, <8>, weight:4), (<2>, <6>, weight:2)]
+
+>> graph_adj:
+
+{<7>: [(<0>, weight:6), (<1>, weight:4), (<5>, weight:10), (<3>, weight:2), (<4>, weight:10), (<2>, weight:5), (<8>, weight:9)],
+<0>: [(<7>, weight:6), (<6>, weight:4), (<1>, weight:5), (<5>, weight:3), (<3>, weight:1), (<4>, weight:4), (<2>, weight:6)],
+<1>: [(<7>, weight:4), (<0>, weight:5), (<6>, weight:2), (<5>, weight:9), (<3>, weight:4), (<4>, weight:7)],
+<5>: [(<7>, weight:10), (<0>, weight:3), (<1>, weight:9), (<6>, weight:6), (<3>, weight:8), (<2>, weight:6), (<8>, weight:1)],
+<3>: [(<7>, weight:2), (<0>, weight:1), (<1>, weight:4), (<5>, weight:8), (<4>, weight:8), (<2>, weight:2), (<8>, weight:3)],
+<4>: [(<7>, weight:10), (<0>, weight:4), (<1>, weight:7), (<3>, weight:8), (<2>, weight:5), (<8>, weight:4)],
+<2>: [(<7>, weight:5), (<0>, weight:6), (<5>, weight:6), (<3>, weight:2), (<4>, weight:5), (<6>, weight:2)],
+<8>: [(<7>, weight:9), (<5>, weight:1), (<3>, weight:3), (<4>, weight:4)],
+<6>: [(<0>, weight:4), (<1>, weight:2), (<5>, weight:6), (<2>, weight:2)]}
+
+>> graph_nl:
+
+Node <7> is connected to nodes <0>, <1>, <5>, <3>, <4>, <2>, <8>.
+Node <0> is connected to nodes <7>, <6>, <1>, <5>, <3>, <4>, <2>.
+Node <1> is connected to nodes <7>, <0>, <6>, <5>, <3>, <4>.
+Node <5> is connected to nodes <7>, <0>, <1>, <6>, <3>, <2>, <8>.
+Node <3> is connected to nodes <7>, <0>, <1>, <5>, <4>, <2>, <8>.
+Node <4> is connected to nodes <7>, <0>, <1>, <3>, <2>, <8>.
+Node <2> is connected to nodes <7>, <0>, <5>, <3>, <4>, <6>.
+Node <8> is connected to nodes <7>, <5>, <3>, <4>.
+Node <6> is connected to nodes <0>, <1>, <5>, <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>]
+
+>> num_nodes:
+
+9
+
+>> num_edges:
+
+27
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+17
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <2>, weight:2).
+Collected nodes: <0>, <2>. The edge with minimum weight we find: (<2>, <1>, weight:2).
+Collected nodes: <0>, <2>, <1>. The edge with minimum weight we find: (<1>, <5>, weight:2).
+Collected nodes: <0>, <2>, <1>, <5>. The edge with minimum weight we find: (<5>, <7>, weight:1).
+Collected nodes: <0>, <2>, <1>, <5>, <7>. The edge with minimum weight we find: (<5>, <8>, weight:2).
+Collected nodes: <0>, <2>, <1>, <5>, <7>, <8>. The edge with minimum weight we find: (<7>, <4>, weight:3).
+Collected nodes: <0>, <2>, <1>, <5>, <7>, <8>, <4>. The edge with minimum weight we find: (<4>, <6>, weight:1).
+Collected nodes: <0>, <2>, <1>, <5>, <7>, <8>, <4>, <6>. The edge with minimum weight we find: (<7>, <3>, weight:4).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[0, 23, 17, 24]',)
+
+>> label:
+
+2
+
+>> answer_tree:
+
+[(<0>, <2>, weight:2), (<2>, <1>, weight:2), (<1>, <5>, weight:2), (<5>, <7>, weight:1), (<5>, <8>, weight:2), (<7>, <4>, weight:3), (<4>, <6>, weight:1), (<7>, <3>, weight:4)]
+
+####### sample 5 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<2>, <0>, weight:3), (<2>, <1>, weight:7), (<0>, <6>, weight:1), (<0>, <10>, weight:5), (<6>, <8>, weight:5), (<10>, <7>, weight:3), (<8>, <3>, weight:1), (<8>, <11>, weight:8), (<7>, <13>, weight:1), (<7>, <5>, weight:1), (<3>, <12>, weight:7), (<3>, <11>, weight:7), (<13>, <9>, weight:7), (<9>, <4>, weight:1)]
+
+>> graph_adj:
+
+{<2>: [(<0>, weight:3), (<1>, weight:7)],
+<0>: [(<2>, weight:3), (<6>, weight:1), (<10>, weight:5)],
+<1>: [(<2>, weight:7)],
+<6>: [(<0>, weight:1), (<8>, weight:5)],
+<10>: [(<0>, weight:5), (<7>, weight:3)],
+<8>: [(<6>, weight:5), (<3>, weight:1), (<11>, weight:8)],
+<7>: [(<10>, weight:3), (<13>, weight:1), (<5>, weight:1)],
+<3>: [(<8>, weight:1), (<12>, weight:7), (<11>, weight:7)],
+<12>: [(<3>, weight:7)],
+<11>: [(<3>, weight:7), (<8>, weight:8)],
+<13>: [(<7>, weight:1), (<9>, weight:7)],
+<5>: [(<7>, weight:1)],
+<9>: [(<13>, weight:7), (<4>, weight:1)],
+<4>: [(<9>, weight:1)]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <0>, <1>.
+Node <0> is connected to nodes <2>, <6>, <10>.
+Node <1> is connected to node <2>.
+Node <6> is connected to nodes <0>, <8>.
+Node <10> is connected to nodes <0>, <7>.
+Node <8> is connected to nodes <6>, <3>, <11>.
+Node <7> is connected to nodes <10>, <13>, <5>.
+Node <3> is connected to nodes <8>, <12>, <11>.
+Node <12> is connected to node <3>.
+Node <11> is connected to nodes <3>, <8>.
+Node <13> is connected to nodes <7>, <9>.
+Node <5> is connected to node <7>.
+Node <9> is connected to nodes <13>, <4>.
+Node <4> is connected to node <9>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>]
+
+>> num_nodes:
+
+14
+
+>> num_edges:
+
+14
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+49
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <1>, weight:7).
+Collected nodes: <0>, <1>. The edge with minimum weight we find: (<1>, <2>, weight:3).
+Collected nodes: <0>, <1>, <2>. The edge with minimum weight we find: (<2>, <7>, weight:1).
+Collected nodes: <0>, <1>, <2>, <7>. The edge with minimum weight we find: (<2>, <13>, weight:5).
+Collected nodes: <0>, <1>, <2>, <7>, <13>. The edge with minimum weight we find: (<13>, <3>, weight:3).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>. The edge with minimum weight we find: (<3>, <8>, weight:1).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>. The edge with minimum weight we find: (<3>, <4>, weight:1).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>. The edge with minimum weight we find: (<7>, <12>, weight:5).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>, <12>. The edge with minimum weight we find: (<12>, <6>, weight:1).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>, <12>, <6>. The edge with minimum weight we find: (<6>, <5>, weight:7).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>, <12>, <6>, <5>. The edge with minimum weight we find: (<6>, <9>, weight:7).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>, <12>, <6>, <5>, <9>. The edge with minimum weight we find: (<4>, <11>, weight:7).
+Collected nodes: <0>, <1>, <2>, <7>, <13>, <3>, <8>, <4>, <12>, <6>, <5>, <9>, <11>. The edge with minimum weight we find: (<11>, <10>, weight:1).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[55, 0, 49, 57]',)
+
+>> label:
+
+2
+
+>> answer_tree:
+
+[(<0>, <1>, weight:7), (<1>, <2>, weight:3), (<2>, <7>, weight:1), (<2>, <13>, weight:5), (<13>, <3>, weight:3), (<3>, <8>, weight:1), (<3>, <4>, weight:1), (<7>, <12>, weight:5), (<12>, <6>, weight:1), (<6>, <5>, weight:7), (<6>, <9>, weight:7), (<4>, <11>, weight:7), (<11>, <10>, weight:1)]
+
+####### sample 6 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<6>, <7>, weight:6), (<6>, <0>, weight:8), (<6>, <5>, weight:5), (<6>, <3>, weight:3), (<6>, <2>, weight:3), (<6>, <4>, weight:6), (<7>, <0>, weight:7), (<7>, <5>, weight:7), (<7>, <3>, weight:4), (<7>, <4>, weight:10), (<0>, <5>, weight:6), (<0>, <3>, weight:8), (<0>, <2>, weight:3), (<0>, <1>, weight:8), (<0>, <4>, weight:2), (<5>, <2>, weight:10), (<5>, <1>, weight:1), (<3>, <2>, weight:3), (<3>, <4>, weight:3), (<2>, <1>, weight:2)]
+
+>> graph_adj:
+
+{<6>: [(<7>, weight:6), (<0>, weight:8), (<5>, weight:5), (<3>, weight:3), (<2>, weight:3), (<4>, weight:6)],
+<7>: [(<6>, weight:6), (<0>, weight:7), (<5>, weight:7), (<3>, weight:4), (<4>, weight:10)],
+<0>: [(<6>, weight:8), (<7>, weight:7), (<5>, weight:6), (<3>, weight:8), (<2>, weight:3), (<1>, weight:8), (<4>, weight:2)],
+<5>: [(<6>, weight:5), (<7>, weight:7), (<0>, weight:6), (<2>, weight:10), (<1>, weight:1)],
+<3>: [(<6>, weight:3), (<7>, weight:4), (<0>, weight:8), (<2>, weight:3), (<4>, weight:3)],
+<2>: [(<6>, weight:3), (<0>, weight:3), (<5>, weight:10), (<3>, weight:3), (<1>, weight:2)],
+<4>: [(<6>, weight:6), (<7>, weight:10), (<0>, weight:2), (<3>, weight:3)],
+<1>: [(<0>, weight:8), (<5>, weight:1), (<2>, weight:2)]}
+
+>> graph_nl:
+
+Node <6> is connected to nodes <7>, <0>, <5>, <3>, <2>, <4>.
+Node <7> is connected to nodes <6>, <0>, <5>, <3>, <4>.
+Node <0> is connected to nodes <6>, <7>, <5>, <3>, <2>, <1>, <4>.
+Node <5> is connected to nodes <6>, <7>, <0>, <2>, <1>.
+Node <3> is connected to nodes <6>, <7>, <0>, <2>, <4>.
+Node <2> is connected to nodes <6>, <0>, <5>, <3>, <1>.
+Node <4> is connected to nodes <6>, <7>, <0>, <3>.
+Node <1> is connected to nodes <0>, <5>, <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>]
+
+>> num_nodes:
+
+8
+
+>> num_edges:
+
+20
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+18
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <7>, weight:2).
+Collected nodes: <0>, <7>. The edge with minimum weight we find: (<7>, <2>, weight:1).
+Collected nodes: <0>, <7>, <2>. The edge with minimum weight we find: (<0>, <6>, weight:3).
+Collected nodes: <0>, <7>, <2>, <6>. The edge with minimum weight we find: (<6>, <3>, weight:2).
+Collected nodes: <0>, <7>, <2>, <6>, <3>. The edge with minimum weight we find: (<0>, <5>, weight:3).
+Collected nodes: <0>, <7>, <2>, <6>, <3>, <5>. The edge with minimum weight we find: (<0>, <4>, weight:3).
+Collected nodes: <0>, <7>, <2>, <6>, <3>, <5>, <4>. The edge with minimum weight we find: (<5>, <1>, weight:4).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[18, 0, 24, 23]',)
+
+>> label:
+
+0
+
+>> answer_tree:
+
+[(<0>, <7>, weight:2), (<7>, <2>, weight:1), (<0>, <6>, weight:3), (<6>, <3>, weight:2), (<0>, <5>, weight:3), (<0>, <4>, weight:3), (<5>, <1>, weight:4)]
+
+####### sample 7 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<1>, <4>, weight:7), (<1>, <7>, weight:4), (<1>, <0>, weight:6), (<1>, <3>, weight:4), (<1>, <6>, weight:5), (<4>, <0>, weight:8), (<4>, <6>, weight:1), (<4>, <8>, weight:4), (<4>, <9>, weight:3), (<4>, <5>, weight:2), (<7>, <2>, weight:9), (<7>, <0>, weight:10), (<7>, <8>, weight:5), (<7>, <9>, weight:8), (<7>, <5>, weight:1), (<0>, <3>, weight:1), (<0>, <6>, weight:3), (<0>, <8>, weight:7), (<0>, <9>, weight:5), (<3>, <2>, weight:9), (<3>, <6>, weight:5), (<3>, <8>, weight:9), (<3>, <9>, weight:2), (<3>, <5>, weight:6), (<6>, <2>, weight:10), (<8>, <2>, weight:5), (<8>, <5>, weight:8), (<9>, <5>, weight:3)]
+
+>> graph_adj:
+
+{<1>: [(<4>, weight:7), (<7>, weight:4), (<0>, weight:6), (<3>, weight:4), (<6>, weight:5)],
+<4>: [(<1>, weight:7), (<0>, weight:8), (<6>, weight:1), (<8>, weight:4), (<9>, weight:3), (<5>, weight:2)],
+<7>: [(<1>, weight:4), (<2>, weight:9), (<0>, weight:10), (<8>, weight:5), (<9>, weight:8), (<5>, weight:1)],
+<0>: [(<1>, weight:6), (<4>, weight:8), (<7>, weight:10), (<3>, weight:1), (<6>, weight:3), (<8>, weight:7), (<9>, weight:5)],
+<3>: [(<1>, weight:4), (<0>, weight:1), (<2>, weight:9), (<6>, weight:5), (<8>, weight:9), (<9>, weight:2), (<5>, weight:6)],
+<6>: [(<1>, weight:5), (<4>, weight:1), (<0>, weight:3), (<3>, weight:5), (<2>, weight:10)],
+<8>: [(<4>, weight:4), (<7>, weight:5), (<0>, weight:7), (<3>, weight:9), (<2>, weight:5), (<5>, weight:8)],
+<9>: [(<4>, weight:3), (<7>, weight:8), (<0>, weight:5), (<3>, weight:2), (<5>, weight:3)],
+<5>: [(<4>, weight:2), (<7>, weight:1), (<3>, weight:6), (<8>, weight:8), (<9>, weight:3)],
+<2>: [(<7>, weight:9), (<3>, weight:9), (<6>, weight:10), (<8>, weight:5)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <4>, <7>, <0>, <3>, <6>.
+Node <4> is connected to nodes <1>, <0>, <6>, <8>, <9>, <5>.
+Node <7> is connected to nodes <1>, <2>, <0>, <8>, <9>, <5>.
+Node <0> is connected to nodes <1>, <4>, <7>, <3>, <6>, <8>, <9>.
+Node <3> is connected to nodes <1>, <0>, <2>, <6>, <8>, <9>, <5>.
+Node <6> is connected to nodes <1>, <4>, <0>, <3>, <2>.
+Node <8> is connected to nodes <4>, <7>, <0>, <3>, <2>, <5>.
+Node <9> is connected to nodes <4>, <7>, <0>, <3>, <5>.
+Node <5> is connected to nodes <4>, <7>, <3>, <8>, <9>.
+Node <2> is connected to nodes <7>, <3>, <6>, <8>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>]
+
+>> num_nodes:
+
+10
+
+>> num_edges:
+
+28
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+23
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <1>, weight:1).
+Collected nodes: <0>, <1>. The edge with minimum weight we find: (<0>, <2>, weight:2).
+Collected nodes: <0>, <1>, <2>. The edge with minimum weight we find: (<1>, <8>, weight:3).
+Collected nodes: <0>, <1>, <2>, <8>. The edge with minimum weight we find: (<8>, <3>, weight:1).
+Collected nodes: <0>, <1>, <2>, <8>, <3>. The edge with minimum weight we find: (<3>, <6>, weight:2).
+Collected nodes: <0>, <1>, <2>, <8>, <3>, <6>. The edge with minimum weight we find: (<6>, <9>, weight:1).
+Collected nodes: <0>, <1>, <2>, <8>, <3>, <6>, <9>. The edge with minimum weight we find: (<0>, <4>, weight:4).
+Collected nodes: <0>, <1>, <2>, <8>, <3>, <6>, <9>, <4>. The edge with minimum weight we find: (<3>, <5>, weight:4).
+Collected nodes: <0>, <1>, <2>, <8>, <3>, <6>, <9>, <4>, <5>. The edge with minimum weight we find: (<5>, <7>, weight:5).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[0, 25, 23, 28]',)
+
+>> label:
+
+2
+
+>> answer_tree:
+
+[(<0>, <1>, weight:1), (<0>, <2>, weight:2), (<1>, <8>, weight:3), (<8>, <3>, weight:1), (<3>, <6>, weight:2), (<6>, <9>, weight:1), (<0>, <4>, weight:4), (<3>, <5>, weight:4), (<5>, <7>, weight:5)]
+
+####### sample 8 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<6>, <7>, weight:10), (<7>, <3>, weight:6), (<7>, <1>, weight:6), (<7>, <5>, weight:2), (<3>, <4>, weight:6), (<3>, <0>, weight:6), (<1>, <8>, weight:9), (<1>, <4>, weight:6), (<5>, <4>, weight:10), (<5>, <0>, weight:7), (<8>, <4>, weight:1), (<8>, <0>, weight:1), (<4>, <0>, weight:6), (<4>, <2>, weight:1)]
+
+>> graph_adj:
+
+{<6>: [(<7>, weight:10)],
+<7>: [(<6>, weight:10), (<3>, weight:6), (<1>, weight:6), (<5>, weight:2)],
+<3>: [(<7>, weight:6), (<4>, weight:6), (<0>, weight:6)],
+<1>: [(<7>, weight:6), (<8>, weight:9), (<4>, weight:6)],
+<5>: [(<7>, weight:2), (<4>, weight:10), (<0>, weight:7)],
+<8>: [(<4>, weight:1), (<0>, weight:1), (<1>, weight:9)],
+<4>: [(<8>, weight:1), (<3>, weight:6), (<0>, weight:6), (<2>, weight:1), (<1>, weight:6), (<5>, weight:10)],
+<0>: [(<8>, weight:1), (<4>, weight:6), (<3>, weight:6), (<5>, weight:7)],
+<2>: [(<4>, weight:1)]}
+
+>> graph_nl:
+
+Node <6> is connected to node <7>.
+Node <7> is connected to nodes <6>, <3>, <1>, <5>.
+Node <3> is connected to nodes <7>, <4>, <0>.
+Node <1> is connected to nodes <7>, <8>, <4>.
+Node <5> is connected to nodes <7>, <4>, <0>.
+Node <8> is connected to nodes <4>, <0>, <1>.
+Node <4> is connected to nodes <8>, <3>, <0>, <2>, <1>, <5>.
+Node <0> is connected to nodes <8>, <4>, <3>, <5>.
+Node <2> is connected to node <4>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>]
+
+>> num_nodes:
+
+9
+
+>> num_edges:
+
+14
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+33
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <8>, weight:2).
+Collected nodes: <0>, <8>. The edge with minimum weight we find: (<0>, <7>, weight:6).
+Collected nodes: <0>, <8>, <7>. The edge with minimum weight we find: (<7>, <5>, weight:6).
+Collected nodes: <0>, <8>, <7>, <5>. The edge with minimum weight we find: (<5>, <3>, weight:1).
+Collected nodes: <0>, <8>, <7>, <5>, <3>. The edge with minimum weight we find: (<5>, <2>, weight:1).
+Collected nodes: <0>, <8>, <7>, <5>, <3>, <2>. The edge with minimum weight we find: (<2>, <6>, weight:1).
+Collected nodes: <0>, <8>, <7>, <5>, <3>, <2>, <6>. The edge with minimum weight we find: (<6>, <1>, weight:6).
+Collected nodes: <0>, <8>, <7>, <5>, <3>, <2>, <6>, <1>. The edge with minimum weight we find: (<0>, <4>, weight:10).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[33, 0, 36, 42]',)
+
+>> label:
+
+0
+
+>> answer_tree:
+
+[(<0>, <8>, weight:2), (<0>, <7>, weight:6), (<7>, <5>, weight:6), (<5>, <3>, weight:1), (<5>, <2>, weight:1), (<2>, <6>, weight:1), (<6>, <1>, weight:6), (<0>, <4>, weight:10)]
+
+####### sample 9 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<3>, <2>, weight:2), (<3>, <4>, weight:1), (<2>, <8>, weight:9), (<4>, <7>, weight:6), (<8>, <1>, weight:9), (<7>, <0>, weight:6), (<1>, <9>, weight:3), (<0>, <5>, weight:10), (<5>, <10>, weight:2), (<9>, <11>, weight:10), (<11>, <6>, weight:3), (<6>, <10>, weight:7)]
+
+>> graph_adj:
+
+{<3>: [(<2>, weight:2), (<4>, weight:1)],
+<2>: [(<3>, weight:2), (<8>, weight:9)],
+<4>: [(<3>, weight:1), (<7>, weight:6)],
+<8>: [(<2>, weight:9), (<1>, weight:9)],
+<7>: [(<4>, weight:6), (<0>, weight:6)],
+<1>: [(<8>, weight:9), (<9>, weight:3)],
+<0>: [(<7>, weight:6), (<5>, weight:10)],
+<5>: [(<0>, weight:10), (<10>, weight:2)],
+<9>: [(<11>, weight:10), (<1>, weight:3)],
+<11>: [(<9>, weight:10), (<6>, weight:3)],
+<6>: [(<11>, weight:3), (<10>, weight:7)],
+<10>: [(<6>, weight:7), (<5>, weight:2)]}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <2>, <4>.
+Node <2> is connected to nodes <3>, <8>.
+Node <4> is connected to nodes <3>, <7>.
+Node <8> is connected to nodes <2>, <1>.
+Node <7> is connected to nodes <4>, <0>.
+Node <1> is connected to nodes <8>, <9>.
+Node <0> is connected to nodes <7>, <5>.
+Node <5> is connected to nodes <0>, <10>.
+Node <9> is connected to nodes <11>, <1>.
+Node <11> is connected to nodes <9>, <6>.
+Node <6> is connected to nodes <11>, <10>.
+Node <10> is connected to nodes <6>, <5>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>]
+
+>> num_nodes:
+
+12
+
+>> num_edges:
+
+12
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+58
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <10>, weight:3).
+Collected nodes: <0>, <10>. The edge with minimum weight we find: (<0>, <6>, weight:7).
+Collected nodes: <0>, <10>, <6>. The edge with minimum weight we find: (<6>, <1>, weight:2).
+Collected nodes: <0>, <10>, <6>, <1>. The edge with minimum weight we find: (<1>, <3>, weight:10).
+Collected nodes: <0>, <10>, <6>, <1>, <3>. The edge with minimum weight we find: (<3>, <5>, weight:6).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>. The edge with minimum weight we find: (<5>, <7>, weight:6).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>, <7>. The edge with minimum weight we find: (<7>, <8>, weight:1).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>, <7>, <8>. The edge with minimum weight we find: (<8>, <4>, weight:2).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>, <7>, <8>, <4>. The edge with minimum weight we find: (<4>, <9>, weight:9).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>, <7>, <8>, <4>, <9>. The edge with minimum weight we find: (<9>, <2>, weight:9).
+Collected nodes: <0>, <10>, <6>, <1>, <3>, <5>, <7>, <8>, <4>, <9>, <2>. The edge with minimum weight we find: (<2>, <11>, weight:3).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[58, 0, 64, 60]',)
+
+>> label:
+
+0
+
+>> answer_tree:
+
+[(<0>, <10>, weight:3), (<0>, <6>, weight:7), (<6>, <1>, weight:2), (<1>, <3>, weight:10), (<3>, <5>, weight:6), (<5>, <7>, weight:6), (<7>, <8>, weight:1), (<8>, <4>, weight:2), (<4>, <9>, weight:9), (<9>, <2>, weight:9), (<2>, <11>, weight:3)]
+
+####### sample 10 #######
+
+>> task:
+
+MST
+
+>> graph:
+
+[(<2>, <4>, weight:8), (<2>, <6>, weight:5), (<2>, <11>, weight:4), (<2>, <0>, weight:9), (<2>, <5>, weight:7), (<2>, <7>, weight:1), (<2>, <13>, weight:3), (<4>, <9>, weight:2), (<4>, <8>, weight:2), (<4>, <12>, weight:9), (<6>, <11>, weight:10), (<6>, <1>, weight:5), (<6>, <14>, weight:7), (<6>, <12>, weight:6), (<11>, <9>, weight:2), (<11>, <5>, weight:2), (<11>, <1>, weight:10), (<11>, <8>, weight:1), (<11>, <3>, weight:1), (<0>, <7>, weight:2), (<5>, <12>, weight:6), (<13>, <9>, weight:5), (<13>, <10>, weight:7), (<13>, <8>, weight:5), (<13>, <14>, weight:9), (<13>, <3>, weight:3), (<13>, <12>, weight:9), (<9>, <10>, weight:10), (<9>, <8>, weight:1), (<8>, <3>, weight:8), (<8>, <12>, weight:7)]
+
+>> graph_adj:
+
+{<2>: [(<4>, weight:8), (<6>, weight:5), (<11>, weight:4), (<0>, weight:9), (<5>, weight:7), (<7>, weight:1), (<13>, weight:3)],
+<4>: [(<2>, weight:8), (<9>, weight:2), (<8>, weight:2), (<12>, weight:9)],
+<6>: [(<2>, weight:5), (<11>, weight:10), (<1>, weight:5), (<14>, weight:7), (<12>, weight:6)],
+<11>: [(<2>, weight:4), (<6>, weight:10), (<9>, weight:2), (<5>, weight:2), (<1>, weight:10), (<8>, weight:1), (<3>, weight:1)],
+<0>: [(<2>, weight:9), (<7>, weight:2)],
+<5>: [(<2>, weight:7), (<11>, weight:2), (<12>, weight:6)],
+<7>: [(<2>, weight:1), (<0>, weight:2)],
+<13>: [(<2>, weight:3), (<9>, weight:5), (<10>, weight:7), (<8>, weight:5), (<14>, weight:9), (<3>, weight:3), (<12>, weight:9)],
+<9>: [(<4>, weight:2), (<11>, weight:2), (<13>, weight:5), (<10>, weight:10), (<8>, weight:1)],
+<8>: [(<4>, weight:2), (<11>, weight:1), (<13>, weight:5), (<9>, weight:1), (<3>, weight:8), (<12>, weight:7)],
+<12>: [(<4>, weight:9), (<6>, weight:6), (<5>, weight:6), (<13>, weight:9), (<8>, weight:7)],
+<1>: [(<6>, weight:5), (<11>, weight:10)],
+<14>: [(<6>, weight:7), (<13>, weight:9)],
+<3>: [(<11>, weight:1), (<13>, weight:3), (<8>, weight:8)],
+<10>: [(<13>, weight:7), (<9>, weight:10)]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <4>, <6>, <11>, <0>, <5>, <7>, <13>.
+Node <4> is connected to nodes <2>, <9>, <8>, <12>.
+Node <6> is connected to nodes <2>, <11>, <1>, <14>, <12>.
+Node <11> is connected to nodes <2>, <6>, <9>, <5>, <1>, <8>, <3>.
+Node <0> is connected to nodes <2>, <7>.
+Node <5> is connected to nodes <2>, <11>, <12>.
+Node <7> is connected to nodes <2>, <0>.
+Node <13> is connected to nodes <2>, <9>, <10>, <8>, <14>, <3>, <12>.
+Node <9> is connected to nodes <4>, <11>, <13>, <10>, <8>.
+Node <8> is connected to nodes <4>, <11>, <13>, <9>, <3>, <12>.
+Node <12> is connected to nodes <4>, <6>, <5>, <13>, <8>.
+Node <1> is connected to nodes <6>, <11>.
+Node <14> is connected to nodes <6>, <13>.
+Node <3> is connected to nodes <11>, <13>, <8>.
+Node <10> is connected to nodes <13>, <9>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+
+>> num_nodes:
+
+15
+
+>> num_edges:
+
+31
+
+>> directed:
+
+False
+
+>> question:
+
+Output the total weight of the minimum spanning tree (MST) for this graph.
+
+>> answer:
+
+46
+
+>> steps:
+
+Let's solve it step by step. We can use the Prim's algorithm. Start from node <0>.
+Collected nodes: <0>. The edge with minimum weight we find: (<0>, <9>, weight:2).
+Collected nodes: <0>, <9>. The edge with minimum weight we find: (<9>, <8>, weight:1).
+Collected nodes: <0>, <9>, <8>. The edge with minimum weight we find: (<9>, <1>, weight:1).
+Collected nodes: <0>, <9>, <8>, <1>. The edge with minimum weight we find: (<1>, <11>, weight:1).
+Collected nodes: <0>, <9>, <8>, <1>, <11>. The edge with minimum weight we find: (<1>, <5>, weight:2).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>. The edge with minimum weight we find: (<11>, <3>, weight:3).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>. The edge with minimum weight we find: (<3>, <6>, weight:3).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>. The edge with minimum weight we find: (<6>, <13>, weight:1).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>. The edge with minimum weight we find: (<13>, <2>, weight:2).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>, <2>. The edge with minimum weight we find: (<6>, <7>, weight:5).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>, <2>, <7>. The edge with minimum weight we find: (<7>, <4>, weight:5).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>, <2>, <7>, <4>. The edge with minimum weight we find: (<5>, <14>, weight:6).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>, <2>, <7>, <4>, <14>. The edge with minimum weight we find: (<7>, <10>, weight:7).
+Collected nodes: <0>, <9>, <8>, <1>, <11>, <5>, <3>, <6>, <13>, <2>, <7>, <4>, <14>, <10>. The edge with minimum weight we find: (<3>, <12>, weight:7).
+These edges make up its minimum spanning tree.
+So the total weight of the minimum spanning tree is 
+
+>> choices:
+
+('[46, 52, 54, 0]',)
+
+>> label:
+
+0
+
+>> answer_tree:
+
+[(<0>, <9>, weight:2), (<9>, <8>, weight:1), (<9>, <1>, weight:1), (<1>, <11>, weight:1), (<1>, <5>, weight:2), (<11>, <3>, weight:3), (<3>, <6>, weight:3), (<6>, <13>, weight:1), (<13>, <2>, weight:2), (<6>, <7>, weight:5), (<7>, <4>, weight:5), (<5>, <14>, weight:6), (<7>, <10>, weight:7), (<3>, <12>, weight:7)]
+

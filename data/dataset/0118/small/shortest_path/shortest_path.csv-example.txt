@@ -1,0 +1,1133 @@
+####### sample 1 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<8>, <10>, weight:9), (<8>, <9>, weight:10), (<10>, <3>, weight:5), (<9>, <7>, weight:3), (<3>, <0>, weight:2), (<7>, <6>, weight:10), (<7>, <5>, weight:9), (<0>, <6>, weight:10), (<5>, <4>, weight:9), (<4>, <2>, weight:10), (<2>, <1>, weight:10)]
+
+>> graph_adj:
+
+{<8>: [(<10>, weight:9), (<9>, weight:10)],
+<10>: [(<8>, weight:9), (<3>, weight:5)],
+<9>: [(<8>, weight:10), (<7>, weight:3)],
+<3>: [(<10>, weight:5), (<0>, weight:2)],
+<7>: [(<9>, weight:3), (<6>, weight:10), (<5>, weight:9)],
+<0>: [(<3>, weight:2), (<6>, weight:10)],
+<6>: [(<0>, weight:10), (<7>, weight:10)],
+<5>: [(<7>, weight:9), (<4>, weight:9)],
+<4>: [(<5>, weight:9), (<2>, weight:10)],
+<2>: [(<4>, weight:10), (<1>, weight:10)],
+<1>: [(<2>, weight:10)]}
+
+>> graph_nl:
+
+Node <8> is connected to nodes <10> (weight: 9), <9> (weight: 10).
+Node <10> is connected to nodes <8> (weight: 9), <3> (weight: 5).
+Node <9> is connected to nodes <8> (weight: 10), <7> (weight: 3).
+Node <3> is connected to nodes <10> (weight: 5), <0> (weight: 2).
+Node <7> is connected to nodes <9> (weight: 3), <6> (weight: 10), <5> (weight: 9).
+Node <0> is connected to nodes <3> (weight: 2), <6> (weight: 10).
+Node <6> is connected to nodes <0> (weight: 10), <7> (weight: 10).
+Node <5> is connected to nodes <7> (weight: 9), <4> (weight: 9).
+Node <4> is connected to nodes <5> (weight: 9), <2> (weight: 10).
+Node <2> is connected to nodes <4> (weight: 10), <1> (weight: 10).
+Node <1> is connected to node <2> (weight: 10).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+11
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <9> to node <3>.
+
+>> answer:
+
+24
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: 0, node <10>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: 3, node <8>: 10, node <10>: inf}
+The visited nodes are: {node <9>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: 12, node <6>: 13, node <8>: 10, node <10>: inf}
+The visited nodes are: {node <9>: 0, node <7>: 3}
+Round 3:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: 12, node <6>: 13, node <10>: 19}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10}
+Round 4:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: 21, node <6>: 13, node <10>: 19}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12}
+Round 5:
+The unvisited nodes are: {node <0>: 23, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: 21, node <10>: 19}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13}
+Round 6:
+The unvisited nodes are: {node <0>: 23, node <1>: inf, node <2>: inf, node <3>: 24, node <4>: 21}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19}
+Round 7:
+The unvisited nodes are: {node <0>: 23, node <1>: inf, node <2>: 31, node <3>: 24}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19, node <4>: 21}
+Round 8:
+The unvisited nodes are: {node <1>: inf, node <2>: 31, node <3>: 24}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19, node <4>: 21, node <0>: 23}
+Round 9:
+The unvisited nodes are: {node <1>: inf, node <2>: 31}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19, node <4>: 21, node <0>: 23, node <3>: 24}
+Round 10:
+The unvisited nodes are: {node <1>: 41}
+The visited nodes are: {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19, node <4>: 21, node <0>: 23, node <3>: 24, node <2>: 31}
+Finally, the distances to the visited nodes are {node <9>: 0, node <7>: 3, node <8>: 10, node <5>: 12, node <6>: 13, node <10>: 19, node <4>: 21, node <0>: 23, node <3>: 24, node <2>: 31, node <1>: 41}.
+So the shortest distance from node <9> to node <3> is 
+
+>> choices:
+
+('[16, 14, 24, 15]',)
+
+>> label:
+
+2
+
+####### sample 2 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<1>, <5>, weight:4), (<1>, <7>, weight:10), (<1>, <9>, weight:1), (<1>, <2>, weight:4), (<5>, <8>, weight:5), (<5>, <0>, weight:4), (<7>, <2>, weight:10), (<7>, <1>, weight:5), (<7>, <5>, weight:9), (<7>, <10>, weight:9), (<9>, <2>, weight:5), (<9>, <5>, weight:10), (<9>, <0>, weight:1), (<2>, <6>, weight:6), (<2>, <8>, weight:2), (<2>, <9>, weight:6), (<8>, <2>, weight:5), (<8>, <4>, weight:2), (<0>, <9>, weight:8), (<0>, <8>, weight:9), (<10>, <1>, weight:4), (<10>, <5>, weight:2), (<10>, <4>, weight:3), (<6>, <8>, weight:9), (<6>, <7>, weight:7), (<6>, <9>, weight:3), (<6>, <2>, weight:2), (<4>, <2>, weight:10), (<3>, <2>, weight:2), (<3>, <6>, weight:2), (<3>, <5>, weight:8), (<3>, <10>, weight:10), (<3>, <0>, weight:8)]
+
+>> graph_adj:
+
+{<1>: [(<5>, weight:4), (<7>, weight:10), (<9>, weight:1), (<2>, weight:4)],
+<5>: [(<8>, weight:5), (<0>, weight:4)],
+<7>: [(<2>, weight:10), (<1>, weight:5), (<5>, weight:9), (<10>, weight:9)],
+<9>: [(<2>, weight:5), (<5>, weight:10), (<0>, weight:1)],
+<2>: [(<6>, weight:6), (<8>, weight:2), (<9>, weight:6)],
+<8>: [(<2>, weight:5), (<4>, weight:2)],
+<0>: [(<9>, weight:8), (<8>, weight:9)],
+<10>: [(<1>, weight:4), (<5>, weight:2), (<4>, weight:3)],
+<6>: [(<8>, weight:9), (<7>, weight:7), (<9>, weight:3), (<2>, weight:2)],
+<4>: [(<2>, weight:10)],
+<3>: [(<2>, weight:2), (<6>, weight:2), (<5>, weight:8), (<10>, weight:10), (<0>, weight:8)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <5> (weight: 4), <7> (weight: 10), <9> (weight: 1), <2> (weight: 4).
+Node <5> is connected to nodes <8> (weight: 5), <0> (weight: 4).
+Node <7> is connected to nodes <2> (weight: 10), <1> (weight: 5), <5> (weight: 9), <10> (weight: 9).
+Node <9> is connected to nodes <2> (weight: 5), <5> (weight: 10), <0> (weight: 1).
+Node <2> is connected to nodes <6> (weight: 6), <8> (weight: 2), <9> (weight: 6).
+Node <8> is connected to nodes <2> (weight: 5), <4> (weight: 2).
+Node <0> is connected to nodes <9> (weight: 8), <8> (weight: 9).
+Node <10> is connected to nodes <1> (weight: 4), <5> (weight: 2), <4> (weight: 3).
+Node <6> is connected to nodes <8> (weight: 9), <7> (weight: 7), <9> (weight: 3), <2> (weight: 2).
+Node <4> is connected to node <2> (weight: 10).
+Node <3> is connected to nodes <2> (weight: 2), <6> (weight: 2), <5> (weight: 8), <10> (weight: 10), <0> (weight: 8).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+33
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the distance of the shortest path from node <5> to node <10>.
+
+>> answer:
+
+32
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: 0, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: 4, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: inf, node <8>: 5, node <9>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0}
+Round 2:
+The unvisited nodes are: {node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: inf, node <8>: 5, node <9>: 12, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4}
+Round 3:
+The unvisited nodes are: {node <1>: inf, node <2>: 10, node <3>: inf, node <4>: 7, node <6>: inf, node <7>: inf, node <9>: 12, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5}
+Round 4:
+The unvisited nodes are: {node <1>: inf, node <2>: 10, node <3>: inf, node <6>: inf, node <7>: inf, node <9>: 12, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7}
+Round 5:
+The unvisited nodes are: {node <1>: inf, node <3>: inf, node <6>: 16, node <7>: inf, node <9>: 12, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10}
+Round 6:
+The unvisited nodes are: {node <1>: inf, node <3>: inf, node <6>: 16, node <7>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12}
+Round 7:
+The unvisited nodes are: {node <1>: inf, node <3>: inf, node <7>: 23, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12, node <6>: 16}
+Round 8:
+The unvisited nodes are: {node <1>: 28, node <3>: inf, node <10>: 32}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12, node <6>: 16, node <7>: 23}
+Round 9:
+The unvisited nodes are: {node <3>: inf, node <10>: 32}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12, node <6>: 16, node <7>: 23, node <1>: 28}
+Round 10:
+The unvisited nodes are: {node <3>: inf}
+The visited nodes are: {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12, node <6>: 16, node <7>: 23, node <1>: 28, node <10>: 32}
+Finally, the distances to the visited nodes are {node <5>: 0, node <0>: 4, node <8>: 5, node <4>: 7, node <2>: 10, node <9>: 12, node <6>: 16, node <7>: 23, node <1>: 28, node <10>: 32, node <3>: inf}.
+So the shortest distance from node <5> to node <10> is 
+
+>> choices:
+
+('[4, 32, 49, 40]',)
+
+>> label:
+
+1
+
+####### sample 3 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<5>, <2>, weight:3), (<5>, <7>, weight:6), (<5>, <1>, weight:9), (<2>, <0>, weight:1), (<2>, <8>, weight:4), (<7>, <6>, weight:7), (<7>, <5>, weight:4), (<1>, <0>, weight:6), (<1>, <5>, weight:2), (<1>, <3>, weight:8), (<0>, <8>, weight:4), (<0>, <3>, weight:3), (<0>, <4>, weight:9), (<8>, <7>, weight:2), (<8>, <1>, weight:5), (<8>, <6>, weight:10), (<6>, <8>, weight:3), (<6>, <3>, weight:10), (<6>, <4>, weight:1), (<6>, <2>, weight:5), (<6>, <7>, weight:1), (<3>, <6>, weight:6), (<3>, <5>, weight:1), (<4>, <3>, weight:1)]
+
+>> graph_adj:
+
+{<5>: [(<2>, weight:3), (<7>, weight:6), (<1>, weight:9)],
+<2>: [(<0>, weight:1), (<8>, weight:4)],
+<7>: [(<6>, weight:7), (<5>, weight:4)],
+<1>: [(<0>, weight:6), (<5>, weight:2), (<3>, weight:8)],
+<0>: [(<8>, weight:4), (<3>, weight:3), (<4>, weight:9)],
+<8>: [(<7>, weight:2), (<1>, weight:5), (<6>, weight:10)],
+<6>: [(<8>, weight:3), (<3>, weight:10), (<4>, weight:1), (<2>, weight:5), (<7>, weight:1)],
+<3>: [(<6>, weight:6), (<5>, weight:1)],
+<4>: [(<3>, weight:1)]}
+
+>> graph_nl:
+
+Node <5> is connected to nodes <2> (weight: 3), <7> (weight: 6), <1> (weight: 9).
+Node <2> is connected to nodes <0> (weight: 1), <8> (weight: 4).
+Node <7> is connected to nodes <6> (weight: 7), <5> (weight: 4).
+Node <1> is connected to nodes <0> (weight: 6), <5> (weight: 2), <3> (weight: 8).
+Node <0> is connected to nodes <8> (weight: 4), <3> (weight: 3), <4> (weight: 9).
+Node <8> is connected to nodes <7> (weight: 2), <1> (weight: 5), <6> (weight: 10).
+Node <6> is connected to nodes <8> (weight: 3), <3> (weight: 10), <4> (weight: 1), <2> (weight: 5), <7> (weight: 1).
+Node <3> is connected to nodes <6> (weight: 6), <5> (weight: 1).
+Node <4> is connected to node <3> (weight: 1).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>]
+
+>> num_nodes:
+
+9
+
+>> num_edges:
+
+24
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the distance of the shortest path from node <2> to node <8>.
+
+>> answer:
+
+4
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: 0, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: 1, node <1>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: 4}
+The visited nodes are: {node <2>: 0}
+Round 2:
+The unvisited nodes are: {node <1>: inf, node <3>: 4, node <4>: 10, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: 4}
+The visited nodes are: {node <2>: 0, node <0>: 1}
+Round 3:
+The unvisited nodes are: {node <1>: inf, node <4>: 10, node <5>: 5, node <6>: 10, node <7>: inf, node <8>: 4}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4}
+Round 4:
+The unvisited nodes are: {node <1>: 9, node <4>: 10, node <5>: 5, node <6>: 10, node <7>: 6}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4}
+Round 5:
+The unvisited nodes are: {node <1>: 9, node <4>: 10, node <6>: 10, node <7>: 6}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4, node <5>: 5}
+Round 6:
+The unvisited nodes are: {node <1>: 9, node <4>: 10, node <6>: 10}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4, node <5>: 5, node <7>: 6}
+Round 7:
+The unvisited nodes are: {node <4>: 10, node <6>: 10}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4, node <5>: 5, node <7>: 6, node <1>: 9}
+Round 8:
+The unvisited nodes are: {node <6>: 10}
+The visited nodes are: {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4, node <5>: 5, node <7>: 6, node <1>: 9, node <4>: 10}
+Finally, the distances to the visited nodes are {node <2>: 0, node <0>: 1, node <3>: 4, node <8>: 4, node <5>: 5, node <7>: 6, node <1>: 9, node <4>: 10, node <6>: 10}.
+So the shortest distance from node <2> to node <8> is 
+
+>> choices:
+
+('[10, 4, 8, 7]',)
+
+>> label:
+
+1
+
+####### sample 4 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<8>, <6>, weight:8), (<8>, <10>, weight:6), (<8>, <3>, weight:2), (<8>, <1>, weight:2), (<8>, <2>, weight:2), (<8>, <7>, weight:7), (<8>, <9>, weight:9), (<6>, <2>, weight:6), (<6>, <9>, weight:8), (<6>, <0>, weight:1), (<6>, <5>, weight:2), (<10>, <9>, weight:7), (<10>, <4>, weight:4), (<3>, <1>, weight:1), (<3>, <5>, weight:2), (<2>, <7>, weight:8), (<9>, <4>, weight:7), (<0>, <5>, weight:8)]
+
+>> graph_adj:
+
+{<8>: [(<6>, weight:8), (<10>, weight:6), (<3>, weight:2), (<1>, weight:2), (<2>, weight:2), (<7>, weight:7), (<9>, weight:9)],
+<6>: [(<8>, weight:8), (<2>, weight:6), (<9>, weight:8), (<0>, weight:1), (<5>, weight:2)],
+<10>: [(<8>, weight:6), (<9>, weight:7), (<4>, weight:4)],
+<3>: [(<8>, weight:2), (<1>, weight:1), (<5>, weight:2)],
+<1>: [(<8>, weight:2), (<3>, weight:1)],
+<2>: [(<8>, weight:2), (<6>, weight:6), (<7>, weight:8)],
+<7>: [(<8>, weight:7), (<2>, weight:8)],
+<9>: [(<8>, weight:9), (<6>, weight:8), (<10>, weight:7), (<4>, weight:7)],
+<0>: [(<6>, weight:1), (<5>, weight:8)],
+<5>: [(<6>, weight:2), (<3>, weight:2), (<0>, weight:8)],
+<4>: [(<10>, weight:4), (<9>, weight:7)]}
+
+>> graph_nl:
+
+Node <8> is connected to nodes <6> (weight: 8), <10> (weight: 6), <3> (weight: 2), <1> (weight: 2), <2> (weight: 2), <7> (weight: 7), <9> (weight: 9).
+Node <6> is connected to nodes <8> (weight: 8), <2> (weight: 6), <9> (weight: 8), <0> (weight: 1), <5> (weight: 2).
+Node <10> is connected to nodes <8> (weight: 6), <9> (weight: 7), <4> (weight: 4).
+Node <3> is connected to nodes <8> (weight: 2), <1> (weight: 1), <5> (weight: 2).
+Node <1> is connected to nodes <8> (weight: 2), <3> (weight: 1).
+Node <2> is connected to nodes <8> (weight: 2), <6> (weight: 6), <7> (weight: 8).
+Node <7> is connected to nodes <8> (weight: 7), <2> (weight: 8).
+Node <9> is connected to nodes <8> (weight: 9), <6> (weight: 8), <10> (weight: 7), <4> (weight: 7).
+Node <0> is connected to nodes <6> (weight: 1), <5> (weight: 8).
+Node <5> is connected to nodes <6> (weight: 2), <3> (weight: 2), <0> (weight: 8).
+Node <4> is connected to nodes <10> (weight: 4), <9> (weight: 7).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+18
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <6> to node <10>.
+
+>> answer:
+
+12
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: 0, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: 1, node <1>: inf, node <2>: 6, node <3>: inf, node <4>: inf, node <5>: 2, node <7>: inf, node <8>: 8, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0}
+Round 2:
+The unvisited nodes are: {node <1>: inf, node <2>: 6, node <3>: inf, node <4>: inf, node <5>: 2, node <7>: inf, node <8>: 8, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0, node <0>: 1}
+Round 3:
+The unvisited nodes are: {node <1>: inf, node <2>: 6, node <3>: 4, node <4>: inf, node <7>: inf, node <8>: 8, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2}
+Round 4:
+The unvisited nodes are: {node <1>: 5, node <2>: 6, node <4>: inf, node <7>: inf, node <8>: 6, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4}
+Round 5:
+The unvisited nodes are: {node <2>: 6, node <4>: inf, node <7>: inf, node <8>: 6, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5}
+Round 6:
+The unvisited nodes are: {node <4>: inf, node <7>: 14, node <8>: 6, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6}
+Round 7:
+The unvisited nodes are: {node <4>: inf, node <7>: 13, node <9>: 8, node <10>: 12}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6, node <8>: 6}
+Round 8:
+The unvisited nodes are: {node <4>: 15, node <7>: 13, node <10>: 12}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6, node <8>: 6, node <9>: 8}
+Round 9:
+The unvisited nodes are: {node <4>: 15, node <7>: 13}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6, node <8>: 6, node <9>: 8, node <10>: 12}
+Round 10:
+The unvisited nodes are: {node <4>: 15}
+The visited nodes are: {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6, node <8>: 6, node <9>: 8, node <10>: 12, node <7>: 13}
+Finally, the distances to the visited nodes are {node <6>: 0, node <0>: 1, node <5>: 2, node <3>: 4, node <1>: 5, node <2>: 6, node <8>: 6, node <9>: 8, node <10>: 12, node <7>: 13, node <4>: 15}.
+So the shortest distance from node <6> to node <10> is 
+
+>> choices:
+
+('[23, 12, 17, 5]',)
+
+>> label:
+
+1
+
+####### sample 5 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<1>, <6>, weight:4), (<1>, <0>, weight:5), (<1>, <2>, weight:8), (<6>, <7>, weight:10), (<6>, <4>, weight:10), (<6>, <3>, weight:2), (<0>, <5>, weight:2), (<0>, <7>, weight:10), (<0>, <2>, weight:3), (<2>, <4>, weight:8), (<2>, <3>, weight:7), (<7>, <5>, weight:6), (<7>, <4>, weight:10), (<7>, <3>, weight:4), (<4>, <5>, weight:6), (<4>, <3>, weight:8), (<3>, <5>, weight:9)]
+
+>> graph_adj:
+
+{<1>: [(<6>, weight:4), (<0>, weight:5), (<2>, weight:8)],
+<6>: [(<1>, weight:4), (<7>, weight:10), (<4>, weight:10), (<3>, weight:2)],
+<0>: [(<1>, weight:5), (<5>, weight:2), (<7>, weight:10), (<2>, weight:3)],
+<2>: [(<1>, weight:8), (<0>, weight:3), (<4>, weight:8), (<3>, weight:7)],
+<7>: [(<6>, weight:10), (<0>, weight:10), (<5>, weight:6), (<4>, weight:10), (<3>, weight:4)],
+<4>: [(<6>, weight:10), (<2>, weight:8), (<5>, weight:6), (<7>, weight:10), (<3>, weight:8)],
+<3>: [(<6>, weight:2), (<2>, weight:7), (<5>, weight:9), (<7>, weight:4), (<4>, weight:8)],
+<5>: [(<0>, weight:2), (<7>, weight:6), (<4>, weight:6), (<3>, weight:9)]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <6> (weight: 4), <0> (weight: 5), <2> (weight: 8).
+Node <6> is connected to nodes <1> (weight: 4), <7> (weight: 10), <4> (weight: 10), <3> (weight: 2).
+Node <0> is connected to nodes <1> (weight: 5), <5> (weight: 2), <7> (weight: 10), <2> (weight: 3).
+Node <2> is connected to nodes <1> (weight: 8), <0> (weight: 3), <4> (weight: 8), <3> (weight: 7).
+Node <7> is connected to nodes <6> (weight: 10), <0> (weight: 10), <5> (weight: 6), <4> (weight: 10), <3> (weight: 4).
+Node <4> is connected to nodes <6> (weight: 10), <2> (weight: 8), <5> (weight: 6), <7> (weight: 10), <3> (weight: 8).
+Node <3> is connected to nodes <6> (weight: 2), <2> (weight: 7), <5> (weight: 9), <7> (weight: 4), <4> (weight: 8).
+Node <5> is connected to nodes <0> (weight: 2), <7> (weight: 6), <4> (weight: 6), <3> (weight: 9).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>]
+
+>> num_nodes:
+
+8
+
+>> num_edges:
+
+17
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <5> to node <0>.
+
+>> answer:
+
+2
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: 0, node <6>: inf, node <7>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: 2, node <1>: inf, node <2>: inf, node <3>: 9, node <4>: 6, node <6>: inf, node <7>: 6}
+The visited nodes are: {node <5>: 0}
+Round 2:
+The unvisited nodes are: {node <1>: 7, node <2>: 5, node <3>: 9, node <4>: 6, node <6>: inf, node <7>: 6}
+The visited nodes are: {node <5>: 0, node <0>: 2}
+Round 3:
+The unvisited nodes are: {node <1>: 7, node <3>: 9, node <4>: 6, node <6>: inf, node <7>: 6}
+The visited nodes are: {node <5>: 0, node <0>: 2, node <2>: 5}
+Round 4:
+The unvisited nodes are: {node <1>: 7, node <3>: 9, node <6>: 16, node <7>: 6}
+The visited nodes are: {node <5>: 0, node <0>: 2, node <2>: 5, node <4>: 6}
+Round 5:
+The unvisited nodes are: {node <1>: 7, node <3>: 9, node <6>: 16}
+The visited nodes are: {node <5>: 0, node <0>: 2, node <2>: 5, node <4>: 6, node <7>: 6}
+Round 6:
+The unvisited nodes are: {node <3>: 9, node <6>: 11}
+The visited nodes are: {node <5>: 0, node <0>: 2, node <2>: 5, node <4>: 6, node <7>: 6, node <1>: 7}
+Round 7:
+The unvisited nodes are: {node <6>: 11}
+The visited nodes are: {node <5>: 0, node <0>: 2, node <2>: 5, node <4>: 6, node <7>: 6, node <1>: 7, node <3>: 9}
+Finally, the distances to the visited nodes are {node <5>: 0, node <0>: 2, node <2>: 5, node <4>: 6, node <7>: 6, node <1>: 7, node <3>: 9, node <6>: 11}.
+So the shortest distance from node <5> to node <0> is 
+
+>> choices:
+
+('[6, 2, 8, 9]',)
+
+>> label:
+
+1
+
+####### sample 6 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<4>, <6>, weight:5), (<4>, <7>, weight:8), (<4>, <9>, weight:4), (<9>, <1>, weight:7), (<9>, <8>, weight:4), (<9>, <2>, weight:5), (<1>, <0>, weight:3), (<8>, <3>, weight:1), (<2>, <10>, weight:8), (<0>, <5>, weight:8)]
+
+>> graph_adj:
+
+{<4>: [(<6>, weight:5), (<7>, weight:8), (<9>, weight:4)],
+<6>: [(<4>, weight:5)],
+<7>: [(<4>, weight:8)],
+<9>: [(<4>, weight:4), (<1>, weight:7), (<8>, weight:4), (<2>, weight:5)],
+<1>: [(<9>, weight:7), (<0>, weight:3)],
+<8>: [(<9>, weight:4), (<3>, weight:1)],
+<2>: [(<9>, weight:5), (<10>, weight:8)],
+<0>: [(<1>, weight:3), (<5>, weight:8)],
+<3>: [(<8>, weight:1)],
+<10>: [(<2>, weight:8)],
+<5>: [(<0>, weight:8)]}
+
+>> graph_nl:
+
+Node <4> is connected to nodes <6> (weight: 5), <7> (weight: 8), <9> (weight: 4).
+Node <6> is connected to node <4> (weight: 5).
+Node <7> is connected to node <4> (weight: 8).
+Node <9> is connected to nodes <4> (weight: 4), <1> (weight: 7), <8> (weight: 4), <2> (weight: 5).
+Node <1> is connected to nodes <9> (weight: 7), <0> (weight: 3).
+Node <8> is connected to nodes <9> (weight: 4), <3> (weight: 1).
+Node <2> is connected to nodes <9> (weight: 5), <10> (weight: 8).
+Node <0> is connected to nodes <1> (weight: 3), <5> (weight: 8).
+Node <3> is connected to node <8> (weight: 1).
+Node <10> is connected to node <2> (weight: 8).
+Node <5> is connected to node <0> (weight: 8).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+
+>> num_nodes:
+
+11
+
+>> num_edges:
+
+10
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <3> to node <2>.
+
+>> answer:
+
+10
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: 0, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: 1, node <9>: inf, node <10>: inf}
+The visited nodes are: {node <3>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <9>: 5, node <10>: inf}
+The visited nodes are: {node <3>: 0, node <8>: 1}
+Round 3:
+The unvisited nodes are: {node <0>: inf, node <1>: 12, node <2>: 10, node <4>: 9, node <5>: inf, node <6>: inf, node <7>: inf, node <10>: inf}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5}
+Round 4:
+The unvisited nodes are: {node <0>: inf, node <1>: 12, node <2>: 10, node <5>: inf, node <6>: 14, node <7>: 17, node <10>: inf}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9}
+Round 5:
+The unvisited nodes are: {node <0>: inf, node <1>: 12, node <5>: inf, node <6>: 14, node <7>: 17, node <10>: 18}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10}
+Round 6:
+The unvisited nodes are: {node <0>: 15, node <5>: inf, node <6>: 14, node <7>: 17, node <10>: 18}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12}
+Round 7:
+The unvisited nodes are: {node <0>: 15, node <5>: inf, node <7>: 17, node <10>: 18}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12, node <6>: 14}
+Round 8:
+The unvisited nodes are: {node <5>: 23, node <7>: 17, node <10>: 18}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12, node <6>: 14, node <0>: 15}
+Round 9:
+The unvisited nodes are: {node <5>: 23, node <10>: 18}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12, node <6>: 14, node <0>: 15, node <7>: 17}
+Round 10:
+The unvisited nodes are: {node <5>: 23}
+The visited nodes are: {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12, node <6>: 14, node <0>: 15, node <7>: 17, node <10>: 18}
+Finally, the distances to the visited nodes are {node <3>: 0, node <8>: 1, node <9>: 5, node <4>: 9, node <2>: 10, node <1>: 12, node <6>: 14, node <0>: 15, node <7>: 17, node <10>: 18, node <5>: 23}.
+So the shortest distance from node <3> to node <2> is 
+
+>> choices:
+
+('[20, 1, 10, 15]',)
+
+>> label:
+
+2
+
+####### sample 7 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<7>, <5>, weight:6), (<5>, <11>, weight:3), (<11>, <1>, weight:4), (<11>, <9>, weight:8), (<9>, <6>, weight:3), (<3>, <10>, weight:4), (<10>, <8>, weight:7), (<8>, <2>, weight:8), (<2>, <4>, weight:5), (<2>, <0>, weight:5), (<6>, <4>, weight:2), (<4>, <0>, weight:2)]
+
+>> graph_adj:
+
+{<7>: [(<5>, weight:6)],
+<5>: [(<7>, weight:6), (<11>, weight:3)],
+<11>: [(<5>, weight:3), (<1>, weight:4), (<9>, weight:8)],
+<1>: [(<11>, weight:4)],
+<9>: [(<11>, weight:8), (<6>, weight:3)],
+<3>: [(<10>, weight:4)],
+<10>: [(<3>, weight:4), (<8>, weight:7)],
+<8>: [(<10>, weight:7), (<2>, weight:8)],
+<2>: [(<8>, weight:8), (<4>, weight:5), (<0>, weight:5)],
+<6>: [(<9>, weight:3), (<4>, weight:2)],
+<4>: [(<6>, weight:2), (<2>, weight:5), (<0>, weight:2)],
+<0>: [(<4>, weight:2), (<2>, weight:5)]}
+
+>> graph_nl:
+
+Node <7> is connected to node <5> (weight: 6).
+Node <5> is connected to nodes <7> (weight: 6), <11> (weight: 3).
+Node <11> is connected to nodes <5> (weight: 3), <1> (weight: 4), <9> (weight: 8).
+Node <1> is connected to node <11> (weight: 4).
+Node <9> is connected to nodes <11> (weight: 8), <6> (weight: 3).
+Node <3> is connected to node <10> (weight: 4).
+Node <10> is connected to nodes <3> (weight: 4), <8> (weight: 7).
+Node <8> is connected to nodes <10> (weight: 7), <2> (weight: 8).
+Node <2> is connected to nodes <8> (weight: 8), <4> (weight: 5), <0> (weight: 5).
+Node <6> is connected to nodes <9> (weight: 3), <4> (weight: 2).
+Node <4> is connected to nodes <6> (weight: 2), <2> (weight: 5), <0> (weight: 2).
+Node <0> is connected to nodes <4> (weight: 2), <2> (weight: 5).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>]
+
+>> num_nodes:
+
+12
+
+>> num_edges:
+
+12
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <5> to node <7>.
+
+>> answer:
+
+6
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: 0, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 6, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: 3}
+The visited nodes are: {node <5>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: 7, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 6, node <8>: inf, node <9>: 11, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3}
+Round 3:
+The unvisited nodes are: {node <0>: inf, node <1>: 7, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <8>: inf, node <9>: 11, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6}
+Round 4:
+The unvisited nodes are: {node <0>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <8>: inf, node <9>: 11, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7}
+Round 5:
+The unvisited nodes are: {node <0>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <6>: 14, node <8>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11}
+Round 6:
+The unvisited nodes are: {node <0>: inf, node <2>: inf, node <3>: inf, node <4>: 16, node <8>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14}
+Round 7:
+The unvisited nodes are: {node <0>: 18, node <2>: 21, node <3>: inf, node <8>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16}
+Round 8:
+The unvisited nodes are: {node <2>: 21, node <3>: inf, node <8>: inf, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16, node <0>: 18}
+Round 9:
+The unvisited nodes are: {node <3>: inf, node <8>: 29, node <10>: inf}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16, node <0>: 18, node <2>: 21}
+Round 10:
+The unvisited nodes are: {node <3>: inf, node <10>: 36}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16, node <0>: 18, node <2>: 21, node <8>: 29}
+Round 11:
+The unvisited nodes are: {node <3>: 40}
+The visited nodes are: {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16, node <0>: 18, node <2>: 21, node <8>: 29, node <10>: 36}
+Finally, the distances to the visited nodes are {node <5>: 0, node <11>: 3, node <7>: 6, node <1>: 7, node <9>: 11, node <6>: 14, node <4>: 16, node <0>: 18, node <2>: 21, node <8>: 29, node <10>: 36, node <3>: 40}.
+So the shortest distance from node <5> to node <7> is 
+
+>> choices:
+
+('[6, 3, 1, 10]',)
+
+>> label:
+
+0
+
+####### sample 8 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<9>, <14>, weight:5), (<9>, <1>, weight:1), (<9>, <11>, weight:8), (<9>, <0>, weight:9), (<14>, <2>, weight:3), (<14>, <5>, weight:3), (<11>, <2>, weight:5), (<11>, <13>, weight:1), (<2>, <12>, weight:7), (<13>, <8>, weight:1), (<8>, <7>, weight:6), (<10>, <4>, weight:7), (<10>, <3>, weight:10), (<10>, <6>, weight:1), (<3>, <7>, weight:4)]
+
+>> graph_adj:
+
+{<9>: [(<14>, weight:5), (<1>, weight:1), (<11>, weight:8), (<0>, weight:9)],
+<14>: [(<9>, weight:5), (<2>, weight:3), (<5>, weight:3)],
+<1>: [(<9>, weight:1)],
+<11>: [(<9>, weight:8), (<2>, weight:5), (<13>, weight:1)],
+<0>: [(<9>, weight:9)],
+<2>: [(<14>, weight:3), (<11>, weight:5), (<12>, weight:7)],
+<5>: [(<14>, weight:3)],
+<13>: [(<11>, weight:1), (<8>, weight:1)],
+<12>: [(<2>, weight:7)],
+<8>: [(<13>, weight:1), (<7>, weight:6)],
+<10>: [(<4>, weight:7), (<3>, weight:10), (<6>, weight:1)],
+<4>: [(<10>, weight:7)],
+<3>: [(<10>, weight:10), (<7>, weight:4)],
+<6>: [(<10>, weight:1)],
+<7>: [(<3>, weight:4), (<8>, weight:6)]}
+
+>> graph_nl:
+
+Node <9> is connected to nodes <14> (weight: 5), <1> (weight: 1), <11> (weight: 8), <0> (weight: 9).
+Node <14> is connected to nodes <9> (weight: 5), <2> (weight: 3), <5> (weight: 3).
+Node <1> is connected to node <9> (weight: 1).
+Node <11> is connected to nodes <9> (weight: 8), <2> (weight: 5), <13> (weight: 1).
+Node <0> is connected to node <9> (weight: 9).
+Node <2> is connected to nodes <14> (weight: 3), <11> (weight: 5), <12> (weight: 7).
+Node <5> is connected to node <14> (weight: 3).
+Node <13> is connected to nodes <11> (weight: 1), <8> (weight: 1).
+Node <12> is connected to node <2> (weight: 7).
+Node <8> is connected to nodes <13> (weight: 1), <7> (weight: 6).
+Node <10> is connected to nodes <4> (weight: 7), <3> (weight: 10), <6> (weight: 1).
+Node <4> is connected to node <10> (weight: 7).
+Node <3> is connected to nodes <10> (weight: 10), <7> (weight: 4).
+Node <6> is connected to node <10> (weight: 1).
+Node <7> is connected to nodes <3> (weight: 4), <8> (weight: 6).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+
+>> num_nodes:
+
+15
+
+>> num_edges:
+
+15
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <2> to node <7>.
+
+>> answer:
+
+13
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: 0, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: inf, node <12>: inf, node <13>: inf, node <14>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: 5, node <12>: 7, node <13>: inf, node <14>: 3}
+The visited nodes are: {node <2>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <5>: 6, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: 8, node <10>: inf, node <11>: 5, node <12>: 7, node <13>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3}
+Round 3:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <5>: 6, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: 8, node <10>: inf, node <12>: 7, node <13>: 6}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5}
+Round 4:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: 8, node <10>: inf, node <12>: 7, node <13>: 6}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6}
+Round 5:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: inf, node <8>: 7, node <9>: 8, node <10>: inf, node <12>: 7}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6}
+Round 6:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 13, node <9>: 8, node <10>: inf, node <12>: 7}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7}
+Round 7:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 13, node <9>: 8, node <10>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7}
+Round 8:
+The unvisited nodes are: {node <0>: 17, node <1>: 9, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 13, node <10>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8}
+Round 9:
+The unvisited nodes are: {node <0>: 17, node <3>: inf, node <4>: inf, node <6>: inf, node <7>: 13, node <10>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9}
+Round 10:
+The unvisited nodes are: {node <0>: 17, node <3>: 17, node <4>: inf, node <6>: inf, node <10>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13}
+Round 11:
+The unvisited nodes are: {node <3>: 17, node <4>: inf, node <6>: inf, node <10>: inf}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13, node <0>: 17}
+Round 12:
+The unvisited nodes are: {node <4>: inf, node <6>: inf, node <10>: 27}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13, node <0>: 17, node <3>: 17}
+Round 13:
+The unvisited nodes are: {node <4>: 34, node <6>: 28}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13, node <0>: 17, node <3>: 17, node <10>: 27}
+Round 14:
+The unvisited nodes are: {node <4>: 34}
+The visited nodes are: {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13, node <0>: 17, node <3>: 17, node <10>: 27, node <6>: 28}
+Finally, the distances to the visited nodes are {node <2>: 0, node <14>: 3, node <11>: 5, node <5>: 6, node <13>: 6, node <8>: 7, node <12>: 7, node <9>: 8, node <1>: 9, node <7>: 13, node <0>: 17, node <3>: 17, node <10>: 27, node <6>: 28, node <4>: 34}.
+So the shortest distance from node <2> to node <7> is 
+
+>> choices:
+
+('[17, 13, 24, 8]',)
+
+>> label:
+
+1
+
+####### sample 9 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<2>, <12>, weight:8), (<2>, <6>, weight:6), (<2>, <8>, weight:10), (<2>, <5>, weight:8), (<2>, <13>, weight:10), (<2>, <4>, weight:8), (<2>, <9>, weight:5), (<12>, <6>, weight:1), (<12>, <1>, weight:8), (<12>, <4>, weight:3), (<12>, <0>, weight:5), (<6>, <10>, weight:10), (<6>, <14>, weight:9), (<6>, <4>, weight:3), (<6>, <3>, weight:5), (<6>, <5>, weight:8), (<8>, <5>, weight:6), (<8>, <9>, weight:10), (<8>, <11>, weight:8), (<5>, <0>, weight:4), (<5>, <3>, weight:6), (<5>, <7>, weight:4), (<5>, <4>, weight:7), (<13>, <0>, weight:9), (<13>, <4>, weight:6), (<4>, <1>, weight:1), (<4>, <14>, weight:4), (<4>, <11>, weight:7), (<4>, <7>, weight:8), (<9>, <0>, weight:7), (<9>, <7>, weight:4), (<9>, <11>, weight:9), (<1>, <0>, weight:2), (<0>, <7>, weight:10), (<14>, <7>, weight:7), (<3>, <7>, weight:9)]
+
+>> graph_adj:
+
+{<2>: [(<12>, weight:8), (<6>, weight:6), (<8>, weight:10), (<5>, weight:8), (<13>, weight:10), (<4>, weight:8), (<9>, weight:5)],
+<12>: [(<2>, weight:8), (<6>, weight:1), (<1>, weight:8), (<4>, weight:3), (<0>, weight:5)],
+<6>: [(<2>, weight:6), (<12>, weight:1), (<10>, weight:10), (<14>, weight:9), (<4>, weight:3), (<3>, weight:5), (<5>, weight:8)],
+<8>: [(<2>, weight:10), (<5>, weight:6), (<9>, weight:10), (<11>, weight:8)],
+<5>: [(<2>, weight:8), (<6>, weight:8), (<8>, weight:6), (<0>, weight:4), (<3>, weight:6), (<7>, weight:4), (<4>, weight:7)],
+<13>: [(<2>, weight:10), (<0>, weight:9), (<4>, weight:6)],
+<4>: [(<2>, weight:8), (<12>, weight:3), (<6>, weight:3), (<5>, weight:7), (<13>, weight:6), (<1>, weight:1), (<14>, weight:4), (<11>, weight:7), (<7>, weight:8)],
+<9>: [(<2>, weight:5), (<8>, weight:10), (<0>, weight:7), (<7>, weight:4), (<11>, weight:9)],
+<1>: [(<12>, weight:8), (<4>, weight:1), (<0>, weight:2)],
+<0>: [(<12>, weight:5), (<5>, weight:4), (<13>, weight:9), (<9>, weight:7), (<1>, weight:2), (<7>, weight:10)],
+<10>: [(<6>, weight:10)],
+<14>: [(<6>, weight:9), (<4>, weight:4), (<7>, weight:7)],
+<3>: [(<6>, weight:5), (<5>, weight:6), (<7>, weight:9)],
+<11>: [(<8>, weight:8), (<4>, weight:7), (<9>, weight:9)],
+<7>: [(<5>, weight:4), (<4>, weight:8), (<9>, weight:4), (<0>, weight:10), (<14>, weight:7), (<3>, weight:9)]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <12> (weight: 8), <6> (weight: 6), <8> (weight: 10), <5> (weight: 8), <13> (weight: 10), <4> (weight: 8), <9> (weight: 5).
+Node <12> is connected to nodes <2> (weight: 8), <6> (weight: 1), <1> (weight: 8), <4> (weight: 3), <0> (weight: 5).
+Node <6> is connected to nodes <2> (weight: 6), <12> (weight: 1), <10> (weight: 10), <14> (weight: 9), <4> (weight: 3), <3> (weight: 5), <5> (weight: 8).
+Node <8> is connected to nodes <2> (weight: 10), <5> (weight: 6), <9> (weight: 10), <11> (weight: 8).
+Node <5> is connected to nodes <2> (weight: 8), <6> (weight: 8), <8> (weight: 6), <0> (weight: 4), <3> (weight: 6), <7> (weight: 4), <4> (weight: 7).
+Node <13> is connected to nodes <2> (weight: 10), <0> (weight: 9), <4> (weight: 6).
+Node <4> is connected to nodes <2> (weight: 8), <12> (weight: 3), <6> (weight: 3), <5> (weight: 7), <13> (weight: 6), <1> (weight: 1), <14> (weight: 4), <11> (weight: 7), <7> (weight: 8).
+Node <9> is connected to nodes <2> (weight: 5), <8> (weight: 10), <0> (weight: 7), <7> (weight: 4), <11> (weight: 9).
+Node <1> is connected to nodes <12> (weight: 8), <4> (weight: 1), <0> (weight: 2).
+Node <0> is connected to nodes <12> (weight: 5), <5> (weight: 4), <13> (weight: 9), <9> (weight: 7), <1> (weight: 2), <7> (weight: 10).
+Node <10> is connected to node <6> (weight: 10).
+Node <14> is connected to nodes <6> (weight: 9), <4> (weight: 4), <7> (weight: 7).
+Node <3> is connected to nodes <6> (weight: 5), <5> (weight: 6), <7> (weight: 9).
+Node <11> is connected to nodes <8> (weight: 8), <4> (weight: 7), <9> (weight: 9).
+Node <7> is connected to nodes <5> (weight: 4), <4> (weight: 8), <9> (weight: 4), <0> (weight: 10), <14> (weight: 7), <3> (weight: 9).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>, <14>]
+
+>> num_nodes:
+
+15
+
+>> num_edges:
+
+36
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the distance of the shortest path from node <11> to node <10>.
+
+>> answer:
+
+20
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: 0, node <12>: inf, node <13>: inf, node <14>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: 7, node <5>: inf, node <6>: inf, node <7>: inf, node <8>: 8, node <9>: 9, node <10>: inf, node <12>: inf, node <13>: inf, node <14>: inf}
+The visited nodes are: {node <11>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: 8, node <2>: 15, node <3>: inf, node <5>: 14, node <6>: 10, node <7>: 15, node <8>: 8, node <9>: 9, node <10>: inf, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7}
+Round 3:
+The unvisited nodes are: {node <0>: 10, node <2>: 15, node <3>: inf, node <5>: 14, node <6>: 10, node <7>: 15, node <8>: 8, node <9>: 9, node <10>: inf, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8}
+Round 4:
+The unvisited nodes are: {node <0>: 10, node <2>: 15, node <3>: inf, node <5>: 14, node <6>: 10, node <7>: 15, node <9>: 9, node <10>: inf, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8}
+Round 5:
+The unvisited nodes are: {node <0>: 10, node <2>: 14, node <3>: inf, node <5>: 14, node <6>: 10, node <7>: 13, node <10>: inf, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9}
+Round 6:
+The unvisited nodes are: {node <2>: 14, node <3>: inf, node <5>: 14, node <6>: 10, node <7>: 13, node <10>: inf, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10}
+Round 7:
+The unvisited nodes are: {node <2>: 14, node <3>: 15, node <5>: 14, node <7>: 13, node <10>: 20, node <12>: 10, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10}
+Round 8:
+The unvisited nodes are: {node <2>: 14, node <3>: 15, node <5>: 14, node <7>: 13, node <10>: 20, node <13>: 13, node <14>: 11}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10}
+Round 9:
+The unvisited nodes are: {node <2>: 14, node <3>: 15, node <5>: 14, node <7>: 13, node <10>: 20, node <13>: 13}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11}
+Round 10:
+The unvisited nodes are: {node <2>: 14, node <3>: 15, node <5>: 14, node <10>: 20, node <13>: 13}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13}
+Round 11:
+The unvisited nodes are: {node <2>: 14, node <3>: 15, node <5>: 14, node <10>: 20}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13, node <13>: 13}
+Round 12:
+The unvisited nodes are: {node <3>: 15, node <5>: 14, node <10>: 20}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13, node <13>: 13, node <2>: 14}
+Round 13:
+The unvisited nodes are: {node <3>: 15, node <10>: 20}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13, node <13>: 13, node <2>: 14, node <5>: 14}
+Round 14:
+The unvisited nodes are: {node <10>: 20}
+The visited nodes are: {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13, node <13>: 13, node <2>: 14, node <5>: 14, node <3>: 15}
+Finally, the distances to the visited nodes are {node <11>: 0, node <4>: 7, node <1>: 8, node <8>: 8, node <9>: 9, node <0>: 10, node <6>: 10, node <12>: 10, node <14>: 11, node <7>: 13, node <13>: 13, node <2>: 14, node <5>: 14, node <3>: 15, node <10>: 20}.
+So the shortest distance from node <11> to node <10> is 
+
+>> choices:
+
+('[20, 27, 33, 38]',)
+
+>> label:
+
+0
+
+####### sample 10 #######
+
+>> task:
+
+shortest_path
+
+>> graph:
+
+[(<10>, <7>, weight:2), (<10>, <1>, weight:6), (<10>, <0>, weight:8), (<10>, <4>, weight:10), (<10>, <8>, weight:8), (<1>, <0>, weight:4), (<1>, <5>, weight:2), (<1>, <10>, weight:3), (<1>, <7>, weight:1), (<0>, <2>, weight:10), (<4>, <11>, weight:10), (<4>, <8>, weight:1), (<4>, <7>, weight:7), (<5>, <2>, weight:6), (<5>, <12>, weight:7), (<2>, <10>, weight:8), (<2>, <7>, weight:2), (<2>, <1>, weight:7), (<2>, <0>, weight:3), (<2>, <3>, weight:6), (<2>, <13>, weight:9), (<11>, <2>, weight:3), (<11>, <9>, weight:3), (<11>, <10>, weight:9), (<11>, <0>, weight:2), (<11>, <4>, weight:3), (<11>, <3>, weight:8), (<12>, <2>, weight:10), (<12>, <8>, weight:5), (<12>, <0>, weight:9), (<12>, <4>, weight:4), (<3>, <1>, weight:3), (<3>, <6>, weight:5), (<13>, <12>, weight:5), (<13>, <5>, weight:1), (<13>, <10>, weight:9), (<13>, <7>, weight:6), (<9>, <4>, weight:1), (<9>, <11>, weight:6), (<6>, <3>, weight:2), (<6>, <13>, weight:8), (<6>, <8>, weight:7), (<6>, <7>, weight:6), (<6>, <4>, weight:10)]
+
+>> graph_adj:
+
+{<10>: [(<7>, weight:2), (<1>, weight:6), (<0>, weight:8), (<4>, weight:10), (<8>, weight:8)],
+<7>: [],
+<1>: [(<0>, weight:4), (<5>, weight:2), (<10>, weight:3), (<7>, weight:1)],
+<0>: [(<2>, weight:10)],
+<4>: [(<11>, weight:10), (<8>, weight:1), (<7>, weight:7)],
+<8>: [],
+<5>: [(<2>, weight:6), (<12>, weight:7)],
+<2>: [(<10>, weight:8), (<7>, weight:2), (<1>, weight:7), (<0>, weight:3), (<3>, weight:6), (<13>, weight:9)],
+<11>: [(<2>, weight:3), (<9>, weight:3), (<10>, weight:9), (<0>, weight:2), (<4>, weight:3), (<3>, weight:8)],
+<12>: [(<2>, weight:10), (<8>, weight:5), (<0>, weight:9), (<4>, weight:4)],
+<3>: [(<1>, weight:3), (<6>, weight:5)],
+<13>: [(<12>, weight:5), (<5>, weight:1), (<10>, weight:9), (<7>, weight:6)],
+<9>: [(<4>, weight:1), (<11>, weight:6)],
+<6>: [(<3>, weight:2), (<13>, weight:8), (<8>, weight:7), (<7>, weight:6), (<4>, weight:10)]}
+
+>> graph_nl:
+
+Node <10> is connected to nodes <7> (weight: 2), <1> (weight: 6), <0> (weight: 8), <4> (weight: 10), <8> (weight: 8).
+Node <1> is connected to nodes <0> (weight: 4), <5> (weight: 2), <10> (weight: 3), <7> (weight: 1).
+Node <0> is connected to node <2> (weight: 10).
+Node <4> is connected to nodes <11> (weight: 10), <8> (weight: 1), <7> (weight: 7).
+Node <5> is connected to nodes <2> (weight: 6), <12> (weight: 7).
+Node <2> is connected to nodes <10> (weight: 8), <7> (weight: 2), <1> (weight: 7), <0> (weight: 3), <3> (weight: 6), <13> (weight: 9).
+Node <11> is connected to nodes <2> (weight: 3), <9> (weight: 3), <10> (weight: 9), <0> (weight: 2), <4> (weight: 3), <3> (weight: 8).
+Node <12> is connected to nodes <2> (weight: 10), <8> (weight: 5), <0> (weight: 9), <4> (weight: 4).
+Node <3> is connected to nodes <1> (weight: 3), <6> (weight: 5).
+Node <13> is connected to nodes <12> (weight: 5), <5> (weight: 1), <10> (weight: 9), <7> (weight: 6).
+Node <9> is connected to nodes <4> (weight: 1), <11> (weight: 6).
+Node <6> is connected to nodes <3> (weight: 2), <13> (weight: 8), <8> (weight: 7), <7> (weight: 6), <4> (weight: 10).
+
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>, <11>, <12>, <13>]
+
+>> num_nodes:
+
+14
+
+>> num_edges:
+
+44
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the distance of the shortest path from node <6> to node <3>.
+
+>> answer:
+
+2
+
+>> steps:
+
+Let's solve it step by step. We can use the Dijsktra algorithm.
+Round 0:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: inf, node <4>: inf, node <5>: inf, node <6>: 0, node <7>: inf, node <8>: inf, node <9>: inf, node <10>: inf, node <11>: inf, node <12>: inf, node <13>: inf}
+The visited nodes are: {}
+Round 1:
+The unvisited nodes are: {node <0>: inf, node <1>: inf, node <2>: inf, node <3>: 2, node <4>: 10, node <5>: inf, node <7>: 6, node <8>: 7, node <9>: inf, node <10>: inf, node <11>: inf, node <12>: inf, node <13>: 8}
+The visited nodes are: {node <6>: 0}
+Round 2:
+The unvisited nodes are: {node <0>: inf, node <1>: 5, node <2>: inf, node <4>: 10, node <5>: inf, node <7>: 6, node <8>: 7, node <9>: inf, node <10>: inf, node <11>: inf, node <12>: inf, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2}
+Round 3:
+The unvisited nodes are: {node <0>: 9, node <2>: inf, node <4>: 10, node <5>: 7, node <7>: 6, node <8>: 7, node <9>: inf, node <10>: 8, node <11>: inf, node <12>: inf, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5}
+Round 4:
+The unvisited nodes are: {node <0>: 9, node <2>: inf, node <4>: 10, node <5>: 7, node <8>: 7, node <9>: inf, node <10>: 8, node <11>: inf, node <12>: inf, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6}
+Round 5:
+The unvisited nodes are: {node <0>: 9, node <2>: 13, node <4>: 10, node <8>: 7, node <9>: inf, node <10>: 8, node <11>: inf, node <12>: 14, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7}
+Round 6:
+The unvisited nodes are: {node <0>: 9, node <2>: 13, node <4>: 10, node <9>: inf, node <10>: 8, node <11>: inf, node <12>: 14, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7}
+Round 7:
+The unvisited nodes are: {node <0>: 9, node <2>: 13, node <4>: 10, node <9>: inf, node <11>: inf, node <12>: 14, node <13>: 8}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8}
+Round 8:
+The unvisited nodes are: {node <0>: 9, node <2>: 13, node <4>: 10, node <9>: inf, node <11>: inf, node <12>: 13}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8}
+Round 9:
+The unvisited nodes are: {node <2>: 13, node <4>: 10, node <9>: inf, node <11>: inf, node <12>: 13}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9}
+Round 10:
+The unvisited nodes are: {node <2>: 13, node <9>: inf, node <11>: 20, node <12>: 13}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9, node <4>: 10}
+Round 11:
+The unvisited nodes are: {node <9>: inf, node <11>: 20, node <12>: 13}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9, node <4>: 10, node <2>: 13}
+Round 12:
+The unvisited nodes are: {node <9>: inf, node <11>: 20}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9, node <4>: 10, node <2>: 13, node <12>: 13}
+Round 13:
+The unvisited nodes are: {node <9>: 23}
+The visited nodes are: {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9, node <4>: 10, node <2>: 13, node <12>: 13, node <11>: 20}
+Finally, the distances to the visited nodes are {node <6>: 0, node <3>: 2, node <1>: 5, node <7>: 6, node <5>: 7, node <8>: 7, node <10>: 8, node <13>: 8, node <0>: 9, node <4>: 10, node <2>: 13, node <12>: 13, node <11>: 20, node <9>: 23}.
+So the shortest distance from node <6> to node <3> is 
+
+>> choices:
+
+('[9, 6, 8, 2]',)
+
+>> label:
+
+3
+

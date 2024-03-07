@@ -1,0 +1,644 @@
+####### sample 1 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<1>, <4>), (<4>, <1>), (<4>, <3>), (<4>, <2>), (<3>, <0>), (<2>, <3>), (<5>, <0>), (<5>, <3>), (<5>, <4>)]
+
+>> graph_adj:
+
+{<1>: [<4>],
+<4>: [<1>, <3>, <2>],
+<3>: [<0>],
+<0>: [],
+<2>: [<3>],
+<5>: [<0>, <3>, <4>]}
+
+>> graph_nl:
+
+Node <1> is connected to node <4>.
+Node <4> is connected to nodes <1>, <3>, <2>.
+Node <3> is connected to node <0>.
+Node <2> is connected to node <3>.
+Node <5> is connected to nodes <0>, <3>, <4>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+9
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <4>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<1>, <5>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<1>, <5>] connect to node <4>, so the predecessor nodes of node <4> are 
+
+>> choices:
+
+('[[<3>, <2>, <0>], [<1>, <5>], [<2>, <0>, <1>], []]',)
+
+>> label:
+
+1
+
+####### sample 2 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<5>, <1>), (<5>, <3>), (<5>, <2>), (<1>, <3>), (<1>, <4>), (<1>, <2>), (<3>, <4>), (<3>, <5>), (<3>, <0>), (<0>, <3>), (<4>, <0>)]
+
+>> graph_adj:
+
+{<5>: [<1>, <3>, <2>],
+<1>: [<3>, <4>, <2>],
+<3>: [<4>, <5>, <0>],
+<2>: [],
+<0>: [<3>],
+<4>: [<0>]}
+
+>> graph_nl:
+
+Node <5> is connected to nodes <1>, <3>, <2>.
+Node <1> is connected to nodes <3>, <4>, <2>.
+Node <3> is connected to nodes <4>, <5>, <0>.
+Node <0> is connected to node <3>.
+Node <4> is connected to node <0>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+11
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <0>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<3>, <4>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<3>, <4>] connect to node <0>, so the predecessor nodes of node <0> are 
+
+>> choices:
+
+('[[<3>, <4>], [<3>, <5>, <0>], [], [<2>]]',)
+
+>> label:
+
+0
+
+####### sample 3 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<3>, <2>), (<3>, <0>), (<3>, <1>), (<2>, <0>), (<2>, <3>), (<0>, <3>), (<0>, <2>), (<0>, <4>), (<1>, <3>), (<1>, <2>), (<4>, <1>)]
+
+>> graph_adj:
+
+{<3>: [<2>, <0>, <1>],
+<2>: [<0>, <3>],
+<0>: [<3>, <2>, <4>],
+<1>: [<3>, <2>],
+<4>: [<1>]}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <2>, <0>, <1>.
+Node <2> is connected to nodes <0>, <3>.
+Node <0> is connected to nodes <3>, <2>, <4>.
+Node <1> is connected to nodes <3>, <2>.
+Node <4> is connected to node <1>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+11
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <2>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<3>, <0>, <1>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<3>, <0>, <1>] connect to node <2>, so the predecessor nodes of node <2> are 
+
+>> choices:
+
+('[[<0>, <3>, <4>], [<4>, <3>], [<1>, <0>, <4>], [<3>, <0>, <1>]]',)
+
+>> label:
+
+3
+
+####### sample 4 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<5>, <0>), (<5>, <6>), (<5>, <3>), (<0>, <6>), (<0>, <2>), (<0>, <4>), (<0>, <5>), (<3>, <1>), (<3>, <4>), (<3>, <5>), (<2>, <6>), (<4>, <5>), (<4>, <2>), (<4>, <1>), (<1>, <5>), (<1>, <0>), (<1>, <6>)]
+
+>> graph_adj:
+
+{<5>: [<0>, <6>, <3>],
+<0>: [<6>, <2>, <4>, <5>],
+<6>: [],
+<3>: [<1>, <4>, <5>],
+<2>: [<6>],
+<4>: [<5>, <2>, <1>],
+<1>: [<5>, <0>, <6>]}
+
+>> graph_nl:
+
+Node <5> is connected to nodes <0>, <6>, <3>.
+Node <0> is connected to nodes <6>, <2>, <4>, <5>.
+Node <3> is connected to nodes <1>, <4>, <5>.
+Node <2> is connected to node <6>.
+Node <4> is connected to nodes <5>, <2>, <1>.
+Node <1> is connected to nodes <5>, <0>, <6>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+17
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <4>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<0>, <3>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<0>, <3>] connect to node <4>, so the predecessor nodes of node <4> are 
+
+>> choices:
+
+('[[<2>], [<4>, <2>], [<0>, <3>], []]',)
+
+>> label:
+
+2
+
+####### sample 5 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<2>, <4>), (<2>, <3>), (<4>, <3>), (<4>, <2>), (<0>, <1>), (<0>, <4>), (<0>, <3>), (<1>, <2>), (<1>, <0>)]
+
+>> graph_adj:
+
+{<2>: [<4>, <3>],
+<4>: [<3>, <2>],
+<3>: [],
+<0>: [<1>, <4>, <3>],
+<1>: [<2>, <0>]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <4>, <3>.
+Node <4> is connected to nodes <3>, <2>.
+Node <0> is connected to nodes <1>, <4>, <3>.
+Node <1> is connected to nodes <2>, <0>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+9
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <4>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<2>, <0>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<2>, <0>] connect to node <4>, so the predecessor nodes of node <4> are 
+
+>> choices:
+
+('[[<3>, <4>], [], [<1>, <2>], [<2>, <0>]]',)
+
+>> label:
+
+3
+
+####### sample 6 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<1>, <3>), (<1>, <4>), (<1>, <0>), (<3>, <4>), (<3>, <1>), (<4>, <0>), (<4>, <3>), (<4>, <2>), (<0>, <3>), (<0>, <2>), (<2>, <0>), (<2>, <1>)]
+
+>> graph_adj:
+
+{<1>: [<3>, <4>, <0>],
+<3>: [<4>, <1>],
+<4>: [<0>, <3>, <2>],
+<0>: [<3>, <2>],
+<2>: [<0>, <1>]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <3>, <4>, <0>.
+Node <3> is connected to nodes <4>, <1>.
+Node <4> is connected to nodes <0>, <3>, <2>.
+Node <0> is connected to nodes <3>, <2>.
+Node <2> is connected to nodes <0>, <1>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+12
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <3>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<1>, <4>, <0>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<1>, <4>, <0>] connect to node <3>, so the predecessor nodes of node <3> are 
+
+>> choices:
+
+('[[<1>, <2>], [<1>, <4>, <0>], [<1>, <2>], [<3>, <1>, <4>]]',)
+
+>> label:
+
+1
+
+####### sample 7 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<1>, <2>), (<1>, <5>), (<2>, <1>), (<2>, <3>), (<2>, <0>), (<5>, <1>), (<5>, <3>), (<3>, <4>), (<4>, <1>), (<4>, <5>), (<0>, <1>), (<0>, <3>)]
+
+>> graph_adj:
+
+{<1>: [<2>, <5>],
+<2>: [<1>, <3>, <0>],
+<5>: [<1>, <3>],
+<3>: [<4>],
+<4>: [<1>, <5>],
+<0>: [<1>, <3>]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <2>, <5>.
+Node <2> is connected to nodes <1>, <3>, <0>.
+Node <5> is connected to nodes <1>, <3>.
+Node <3> is connected to node <4>.
+Node <4> is connected to nodes <1>, <5>.
+Node <0> is connected to nodes <1>, <3>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+12
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <5>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<1>, <4>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<1>, <4>] connect to node <5>, so the predecessor nodes of node <5> are 
+
+>> choices:
+
+('[[<3>, <1>, <5>, <4>, <2>], [<2>], [<1>, <4>], [<0>, <3>, <1>, <4>, <2>]]',)
+
+>> label:
+
+2
+
+####### sample 8 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<3>, <0>), (<3>, <5>), (<3>, <2>), (<3>, <4>), (<0>, <2>), (<0>, <4>), (<0>, <1>), (<5>, <0>), (<2>, <3>), (<4>, <3>), (<4>, <2>), (<1>, <0>), (<1>, <2>)]
+
+>> graph_adj:
+
+{<3>: [<0>, <5>, <2>, <4>],
+<0>: [<2>, <4>, <1>],
+<5>: [<0>],
+<2>: [<3>],
+<4>: [<3>, <2>],
+<1>: [<0>, <2>]}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <0>, <5>, <2>, <4>.
+Node <0> is connected to nodes <2>, <4>, <1>.
+Node <5> is connected to node <0>.
+Node <2> is connected to node <3>.
+Node <4> is connected to nodes <3>, <2>.
+Node <1> is connected to nodes <0>, <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+13
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <3>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<2>, <4>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<2>, <4>] connect to node <3>, so the predecessor nodes of node <3> are 
+
+>> choices:
+
+('[[<4>, <3>, <0>, <1>], [<4>, <1>, <5>, <3>, <2>], [<4>], [<2>, <4>]]',)
+
+>> label:
+
+3
+
+####### sample 9 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<0>, <2>), (<0>, <3>), (<0>, <6>), (<0>, <4>), (<2>, <3>), (<3>, <0>), (<3>, <5>), (<3>, <2>), (<6>, <1>), (<6>, <4>), (<6>, <0>), (<6>, <5>), (<4>, <3>), (<4>, <1>), (<5>, <3>), (<5>, <4>), (<1>, <4>), (<1>, <0>), (<1>, <2>), (<1>, <6>)]
+
+>> graph_adj:
+
+{<0>: [<2>, <3>, <6>, <4>],
+<2>: [<3>],
+<3>: [<0>, <5>, <2>],
+<6>: [<1>, <4>, <0>, <5>],
+<4>: [<3>, <1>],
+<5>: [<3>, <4>],
+<1>: [<4>, <0>, <2>, <6>]}
+
+>> graph_nl:
+
+Node <0> is connected to nodes <2>, <3>, <6>, <4>.
+Node <2> is connected to node <3>.
+Node <3> is connected to nodes <0>, <5>, <2>.
+Node <6> is connected to nodes <1>, <4>, <0>, <5>.
+Node <4> is connected to nodes <3>, <1>.
+Node <5> is connected to nodes <3>, <4>.
+Node <1> is connected to nodes <4>, <0>, <2>, <6>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+20
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <1>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<6>, <4>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<6>, <4>] connect to node <1>, so the predecessor nodes of node <1> are 
+
+>> choices:
+
+('[[<0>], [<3>, <1>, <6>], [<2>, <5>, <3>], [<6>, <4>]]',)
+
+>> label:
+
+3
+
+####### sample 10 #######
+
+>> task:
+
+predecessor
+
+>> graph:
+
+[(<3>, <5>), (<3>, <6>), (<3>, <1>), (<6>, <4>), (<6>, <1>), (<1>, <2>), (<1>, <4>), (<2>, <5>), (<2>, <0>), (<2>, <6>), (<2>, <4>), (<0>, <6>), (<0>, <1>), (<0>, <5>)]
+
+>> graph_adj:
+
+{<3>: [<5>, <6>, <1>],
+<5>: [],
+<6>: [<4>, <1>],
+<1>: [<2>, <4>],
+<2>: [<5>, <0>, <6>, <4>],
+<0>: [<6>, <1>, <5>],
+<4>: []}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <5>, <6>, <1>.
+Node <6> is connected to nodes <4>, <1>.
+Node <1> is connected to nodes <2>, <4>.
+Node <2> is connected to nodes <5>, <0>, <6>, <4>.
+Node <0> is connected to nodes <6>, <1>, <5>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+14
+
+>> directed:
+
+True
+
+>> question:
+
+Which are the predecessor nodes of node <1>? A predecessor of n is a node m such that there exists a directed edge from m to n.
+
+>> answer:
+
+[<3>, <0>, <6>]
+
+>> steps:
+
+Let's solve it step by step.
+Nodes [<3>, <0>, <6>] connect to node <1>, so the predecessor nodes of node <1> are 
+
+>> choices:
+
+('[[<1>, <5>, <2>, <0>, <4>, <6>], [<2>, <1>, <4>], [<3>, <0>, <6>], [<3>, <0>, <5>, <2>]]',)
+
+>> label:
+
+2
+

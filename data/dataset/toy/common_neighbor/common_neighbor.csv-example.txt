@@ -1,0 +1,680 @@
+####### sample 1 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<1>, <5>), (<1>, <2>), (<5>, <4>), (<2>, <0>), (<2>, <3>), (<4>, <0>)]
+
+>> graph_adj:
+
+{<1>: [<5>, <2>],
+<5>: [<1>, <4>],
+<2>: [<1>, <0>, <3>],
+<4>: [<5>, <0>],
+<0>: [<2>, <4>],
+<3>: [<2>]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <5>, <2>.
+Node <5> is connected to nodes <1>, <4>.
+Node <2> is connected to nodes <1>, <0>, <3>.
+Node <4> is connected to nodes <5>, <0>.
+Node <0> is connected to nodes <2>, <4>.
+Node <3> is connected to node <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+6
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <2> and node <4>. 
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <2> are [<1>, <0>, <3>].
+Secondly, the neighbors of node <4> are [<5>, <0>].
+Common neighbors of node <2> and node <4>: [<0>], which contains 1 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[7, 4, 1, 0]',)
+
+>> label:
+
+2
+
+####### sample 2 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<3>, <5>), (<3>, <0>), (<3>, <4>), (<5>, <1>), (<0>, <1>), (<4>, <2>)]
+
+>> graph_adj:
+
+{<3>: [<5>, <0>, <4>],
+<5>: [<3>, <1>],
+<0>: [<3>, <1>],
+<4>: [<3>, <2>],
+<1>: [<5>, <0>],
+<2>: [<4>]}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <5>, <0>, <4>.
+Node <5> is connected to nodes <3>, <1>.
+Node <0> is connected to nodes <3>, <1>.
+Node <4> is connected to nodes <3>, <2>.
+Node <1> is connected to nodes <5>, <0>.
+Node <2> is connected to node <4>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+6
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <1> and node <4>. 
+
+>> answer:
+
+0
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <1> are [<5>, <0>].
+Secondly, the neighbors of node <4> are [<3>, <2>].
+Common neighbors of node <1> and node <4>: [], which contains 0 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[0, 7, 4, 10]',)
+
+>> label:
+
+0
+
+####### sample 3 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<6>, <1>), (<6>, <5>), (<6>, <0>), (<6>, <2>), (<6>, <4>), (<1>, <5>), (<5>, <2>), (<5>, <4>), (<5>, <3>), (<5>, <0>)]
+
+>> graph_adj:
+
+{<6>: [<1>, <5>, <0>, <2>, <4>],
+<1>: [<6>, <5>],
+<5>: [<6>, <1>, <2>, <4>, <3>, <0>],
+<0>: [<6>, <5>],
+<2>: [<6>, <5>],
+<4>: [<6>, <5>],
+<3>: [<5>]}
+
+>> graph_nl:
+
+Node <6> is connected to nodes <1>, <5>, <0>, <2>, <4>.
+Node <1> is connected to nodes <6>, <5>.
+Node <5> is connected to nodes <6>, <1>, <2>, <4>, <3>, <0>.
+Node <0> is connected to nodes <6>, <5>.
+Node <2> is connected to nodes <6>, <5>.
+Node <4> is connected to nodes <6>, <5>.
+Node <3> is connected to node <5>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+10
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <4> and node <3>. 
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <4> are [<6>, <5>].
+Secondly, the neighbors of node <3> are [<5>].
+Common neighbors of node <4> and node <3>: [<5>], which contains 1 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[9, 4, 0, 1]',)
+
+>> label:
+
+3
+
+####### sample 4 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<4>, <0>), (<4>, <2>), (<4>, <1>), (<2>, <3>)]
+
+>> graph_adj:
+
+{<4>: [<0>, <2>, <1>],
+<0>: [<4>],
+<2>: [<4>, <3>],
+<1>: [<4>],
+<3>: [<2>]}
+
+>> graph_nl:
+
+Node <4> is connected to nodes <0>, <2>, <1>.
+Node <0> is connected to node <4>.
+Node <2> is connected to nodes <4>, <3>.
+Node <1> is connected to node <4>.
+Node <3> is connected to node <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+4
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <3> and node <0>. 
+
+>> answer:
+
+0
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <3> are [<2>].
+Secondly, the neighbors of node <0> are [<4>].
+Common neighbors of node <3> and node <0>: [], which contains 0 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[0, 4, 3, 9]',)
+
+>> label:
+
+0
+
+####### sample 5 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<1>, <0>), (<1>, <4>), (<1>, <2>), (<1>, <5>), (<0>, <4>), (<0>, <3>), (<0>, <2>), (<0>, <5>), (<4>, <3>), (<4>, <2>), (<4>, <5>), (<2>, <5>), (<5>, <3>)]
+
+>> graph_adj:
+
+{<1>: [<0>, <4>, <2>, <5>],
+<0>: [<1>, <4>, <3>, <2>, <5>],
+<4>: [<1>, <0>, <3>, <2>, <5>],
+<2>: [<1>, <0>, <4>, <5>],
+<5>: [<1>, <0>, <4>, <3>, <2>],
+<3>: [<0>, <4>, <5>]}
+
+>> graph_nl:
+
+Node <1> is connected to nodes <0>, <4>, <2>, <5>.
+Node <0> is connected to nodes <1>, <4>, <3>, <2>, <5>.
+Node <4> is connected to nodes <1>, <0>, <3>, <2>, <5>.
+Node <2> is connected to nodes <1>, <0>, <4>, <5>.
+Node <5> is connected to nodes <1>, <0>, <4>, <3>, <2>.
+Node <3> is connected to nodes <0>, <4>, <5>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+13
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <2> and node <1>. 
+
+>> answer:
+
+3
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <2> are [<1>, <0>, <4>, <5>].
+Secondly, the neighbors of node <1> are [<0>, <4>, <2>, <5>].
+Common neighbors of node <2> and node <1>: [<0>, <4>, <5>], which contains 3 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[0, 7, 9, 3]',)
+
+>> label:
+
+3
+
+####### sample 6 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<5>, <3>), (<5>, <1>), (<5>, <6>), (<3>, <0>), (<6>, <2>), (<0>, <4>), (<4>, <2>)]
+
+>> graph_adj:
+
+{<5>: [<3>, <1>, <6>],
+<3>: [<5>, <0>],
+<1>: [<5>],
+<6>: [<5>, <2>],
+<0>: [<3>, <4>],
+<4>: [<2>, <0>],
+<2>: [<4>, <6>]}
+
+>> graph_nl:
+
+Node <5> is connected to nodes <3>, <1>, <6>.
+Node <3> is connected to nodes <5>, <0>.
+Node <1> is connected to node <5>.
+Node <6> is connected to nodes <5>, <2>.
+Node <0> is connected to nodes <3>, <4>.
+Node <4> is connected to nodes <2>, <0>.
+Node <2> is connected to nodes <4>, <6>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+7
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <1> and node <6>. 
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <1> are [<5>].
+Secondly, the neighbors of node <6> are [<5>, <2>].
+Common neighbors of node <1> and node <6>: [<5>], which contains 1 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[5, 1, 0, 8]',)
+
+>> label:
+
+1
+
+####### sample 7 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<4>, <5>), (<4>, <1>), (<4>, <2>), (<4>, <0>), (<4>, <3>), (<5>, <1>), (<1>, <2>), (<1>, <0>), (<1>, <3>), (<2>, <0>), (<2>, <3>), (<0>, <3>)]
+
+>> graph_adj:
+
+{<4>: [<5>, <1>, <2>, <0>, <3>],
+<5>: [<4>, <1>],
+<1>: [<4>, <5>, <2>, <0>, <3>],
+<2>: [<4>, <1>, <0>, <3>],
+<0>: [<4>, <1>, <2>, <3>],
+<3>: [<4>, <1>, <2>, <0>]}
+
+>> graph_nl:
+
+Node <4> is connected to nodes <5>, <1>, <2>, <0>, <3>.
+Node <5> is connected to nodes <4>, <1>.
+Node <1> is connected to nodes <4>, <5>, <2>, <0>, <3>.
+Node <2> is connected to nodes <4>, <1>, <0>, <3>.
+Node <0> is connected to nodes <4>, <1>, <2>, <3>.
+Node <3> is connected to nodes <4>, <1>, <2>, <0>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>]
+
+>> num_nodes:
+
+6
+
+>> num_edges:
+
+12
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <3> and node <4>. 
+
+>> answer:
+
+3
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <3> are [<4>, <1>, <2>, <0>].
+Secondly, the neighbors of node <4> are [<5>, <1>, <2>, <0>, <3>].
+Common neighbors of node <3> and node <4>: [<0>, <1>, <2>], which contains 3 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[10, 8, 3, 0]',)
+
+>> label:
+
+2
+
+####### sample 8 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<3>, <1>), (<3>, <0>), (<3>, <2>), (<3>, <5>), (<3>, <6>), (<1>, <0>), (<1>, <5>), (<1>, <3>), (<1>, <4>), (<0>, <2>), (<0>, <3>), (<2>, <1>), (<5>, <6>), (<5>, <1>), (<5>, <2>), (<6>, <3>), (<6>, <4>), (<6>, <2>), (<4>, <2>)]
+
+>> graph_adj:
+
+{<3>: [<1>, <0>, <2>, <5>, <6>],
+<1>: [<0>, <5>, <3>, <4>],
+<0>: [<2>, <3>],
+<2>: [<1>],
+<5>: [<6>, <1>, <2>],
+<6>: [<3>, <4>, <2>],
+<4>: [<2>]}
+
+>> graph_nl:
+
+Node <3> is connected to nodes <1>, <0>, <2>, <5>, <6>.
+Node <1> is connected to nodes <0>, <5>, <3>, <4>.
+Node <0> is connected to nodes <2>, <3>.
+Node <2> is connected to node <1>.
+Node <5> is connected to nodes <6>, <1>, <2>.
+Node <6> is connected to nodes <3>, <4>, <2>.
+Node <4> is connected to node <2>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>, <5>, <6>]
+
+>> num_nodes:
+
+7
+
+>> num_edges:
+
+19
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the number of common neighbors of node <0> and node <5>. In the context of a directed graph, we consider a node's successors as its neighbors. 
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <0> are [<2>, <3>].
+Secondly, the neighbors of node <5> are [<6>, <1>, <2>].
+Common neighbors of node <0> and node <5>: [<2>], which contains 1 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[0, 6, 7, 1]',)
+
+>> label:
+
+3
+
+####### sample 9 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<4>, <1>), (<1>, <4>), (<1>, <0>), (<3>, <0>), (<3>, <4>), (<0>, <1>), (<0>, <4>), (<2>, <0>), (<2>, <4>), (<2>, <3>)]
+
+>> graph_adj:
+
+{<4>: [<1>],
+<1>: [<4>, <0>],
+<3>: [<0>, <4>],
+<0>: [<1>, <4>],
+<2>: [<0>, <4>, <3>]}
+
+>> graph_nl:
+
+Node <4> is connected to node <1>.
+Node <1> is connected to nodes <4>, <0>.
+Node <3> is connected to nodes <0>, <4>.
+Node <0> is connected to nodes <1>, <4>.
+Node <2> is connected to nodes <0>, <4>, <3>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+10
+
+>> directed:
+
+True
+
+>> question:
+
+Calculate the number of common neighbors of node <2> and node <4>. In the context of a directed graph, we consider a node's successors as its neighbors. 
+
+>> answer:
+
+0
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <2> are [<0>, <4>, <3>].
+Secondly, the neighbors of node <4> are [<1>].
+Common neighbors of node <2> and node <4>: [], which contains 0 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[9, 0, 10, 5]',)
+
+>> label:
+
+1
+
+####### sample 10 #######
+
+>> task:
+
+common_neighbor
+
+>> graph:
+
+[(<2>, <1>), (<2>, <0>), (<1>, <4>), (<0>, <3>), (<4>, <3>)]
+
+>> graph_adj:
+
+{<2>: [<1>, <0>],
+<1>: [<2>, <4>],
+<0>: [<2>, <3>],
+<4>: [<1>, <3>],
+<3>: [<4>, <0>]}
+
+>> graph_nl:
+
+Node <2> is connected to nodes <1>, <0>.
+Node <1> is connected to nodes <2>, <4>.
+Node <0> is connected to nodes <2>, <3>.
+Node <4> is connected to nodes <1>, <3>.
+Node <3> is connected to nodes <4>, <0>.
+
+>> nodes:
+
+[<0>, <1>, <2>, <3>, <4>]
+
+>> num_nodes:
+
+5
+
+>> num_edges:
+
+5
+
+>> directed:
+
+False
+
+>> question:
+
+Calculate the number of common neighbors of node <2> and node <4>. 
+
+>> answer:
+
+1
+
+>> steps:
+
+Let's calulate the number of common neighbors step by step.
+Fisrtly, the neighbors of node <2> are [<1>, <0>].
+Secondly, the neighbors of node <4> are [<1>, <3>].
+Common neighbors of node <2> and node <4>: [<1>], which contains 1 nodes.
+So the number of common neighbors is 
+
+>> choices:
+
+('[0, 1, 4, 7]',)
+
+>> label:
+
+1
+
