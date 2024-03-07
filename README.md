@@ -1,6 +1,6 @@
 # GTG: Graph Tasks Generation for LLMs
 
-This is the benchmark proposed in our paper: **Empowering Large Language Models with Graph Understanding and Reasoning Capability**
+This is the benchmark proposed in our paper: **GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**
 
 # Install
 
