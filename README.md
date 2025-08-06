@@ -1,6 +1,6 @@
 # GraphInstruct
 
-This is the benchmark proposed in our paper: **GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**
+This is the benchmark proposed in our paper: [**GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**](https://arxiv.org/abs/2403.04483)
 
 ## Dataset Generation and Evaluation
 
@@ -72,22 +72,15 @@ If this work is helpful, please kindly cite as:
 
 ```bibtex
 @article{graphinstruct,
-  author       = {Zihan Luo and
-                  Xiran Song and
-                  Hong Huang and
-                  Jianxun Lian and
-                  Chenhao Zhang and
-                  Jinqi Jiang and
-                  Xing Xie},
-  title        = {GraphInstruct: Empowering Large Language Models with Graph Understanding
-                  and Reasoning Capability},
-  journal      = {CoRR},
-  volume       = {abs/2403.04483},
-  year         = {2024},
-  url          = {https://doi.org/10.48550/arXiv.2403.04483},
-  doi          = {10.48550/ARXIV.2403.04483},
-  eprinttype    = {arXiv},
-  eprint       = {2403.04483},
+  title={GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability},
+  author={Zihan Luo and Xiran Song and Hong Huang and Jianxun Lian and Chenhao Zhang and Jinqi Jiang and Xing Xie},
+  journal={CoRR},
+  volume={abs/2403.04483},
+  year={2024},
+  url={https://doi.org/10.48550/arXiv.2403.04483},
+  doi={10.48550/ARXIV.2403.04483},
+  eprinttype={arXiv},
+  eprint={2403.04483},
 }
 ```
 
