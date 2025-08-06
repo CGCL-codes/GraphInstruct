@@ -86,5 +86,5 @@ If this work is helpful, please kindly cite as:
 
 ## Acknowledgement
 
-This repo benefits from [LLaMAFactory]([https://github.com/huggingface/peft](https://github.com/hiyouga/LLaMA-Factory)). Thanks for their wonderful work.
+This repo benefits from [LLaMAFactory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their wonderful work.
 
