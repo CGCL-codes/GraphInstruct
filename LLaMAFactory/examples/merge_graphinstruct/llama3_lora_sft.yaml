@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /home/ud202281368/data/base_model/llama3.1-8b-instruct
+adapter_name_or_path: /home/ud202281368/jupyterlab/LLaMA-Factory/saves/llama3.1-8b/lora/sft
+template: llama3
+trust_remote_code: true
+
+### export
+export_dir: output/llama3.1-8b_lora_sft
+export_size: 5
+export_device: cpu  # choices: [cpu, auto]
+export_legacy_format: false
