@@ -1,10 +1,10 @@
 # GraphInstruct
 
-This is the benchmark proposed in our paper: **GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**
+This is the benchmark proposed in our paper: [**GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**](https://arxiv.org/abs/2403.04483)
 
 ## Dataset Generation and Evaluation
 
-As a dymamic dataset, GraphInstruct can be generated from scratch and used for evaluation with following steps:
+As a dynamic dataset, GraphInstruct can be generated from scratch and used for evaluation with the following steps:
 
 ### Environment Install
 
@@ -12,8 +12,10 @@ GTG can be installed with pip:
 
 ```
 cd GTG
-pip install -e .
+pip install -e.
 ```
+> [!IMPORTANT]
+> Installation is mandatory.
 
 ### Dataset Generation
 
@@ -61,4 +63,27 @@ bash run.sh
 
 Note that, to ensure proper functioning, it is necessary to adjust the experiment settings in `examples/train_reasoning/llama3_lora_sft.yaml` and `examples/merge_reasoning/llama3_lora_sft.yaml`.
 
-For more details about the experimental configuration , please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/data/README.md) in LLaMAFactory.
+> [!TIP]
+> For more details about the experimental configuration and environment setting, please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/README.md) in LLaMAFactory.
+
+## Citation
+
+If this work is helpful, please kindly cite as:
+
+```bibtex
+@article{graphinstruct,
+  title={GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability},
+  author={Zihan Luo and Xiran Song and Hong Huang and Jianxun Lian and Chenhao Zhang and Jinqi Jiang and Xing Xie},
+  journal={CoRR},
+  volume={abs/2403.04483},
+  year={2024},
+  url={https://doi.org/10.48550/arXiv.2403.04483},
+  doi={10.48550/ARXIV.2403.04483},
+  eprinttype={arXiv},
+  eprint={2403.04483},
+}
+```
+
+## Acknowledgement
+
+This repo benefits from [LLaMAFactory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their wonderful work.
