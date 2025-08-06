@@ -4,7 +4,7 @@ This is the benchmark proposed in our paper: **GraphInstruct: Empowering Large L
 
 ## Dataset Generation and Evaluation
 
-As a dymamic dataset, GraphInstruct can be generated from scratch and used for evaluation with following steps:
+As a dynamic dataset, GraphInstruct can be generated from scratch and used for evaluation with the following steps:
 
 ### Environment Install
 
@@ -12,8 +12,10 @@ GTG can be installed with pip:
 
 ```
 cd GTG
-pip install -e .
+pip install -e.
 ```
+> [!IMPORTANT]
+> Installation is mandatory.
 
 ### Dataset Generation
 
@@ -61,4 +63,6 @@ bash run.sh
 
 Note that, to ensure proper functioning, it is necessary to adjust the experiment settings in `examples/train_reasoning/llama3_lora_sft.yaml` and `examples/merge_reasoning/llama3_lora_sft.yaml`.
 
-For more details about the experimental configuration , please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/data/README.md) in LLaMAFactory.
+> [!TIP]
+> For more details about the experimental configuration, please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/data/README.md) in LLaMAFactory.
+
