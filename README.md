@@ -64,7 +64,7 @@ bash run.sh
 Note that, to ensure proper functioning, it is necessary to adjust the experiment settings in `examples/train_reasoning/llama3_lora_sft.yaml` and `examples/merge_reasoning/llama3_lora_sft.yaml`.
 
 > [!TIP]
-> For more details about the experimental configuration, please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/README.md) in LLaMAFactory.
+> For more details about the experimental configuration and environment setting, please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/README.md) in LLaMAFactory.
 
 ## Citation
 
