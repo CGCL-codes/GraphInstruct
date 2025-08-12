@@ -8,7 +8,7 @@ As a dynamic dataset, GraphInstruct can be generated from scratch and used for e
 
 ### Environment Install
 
-GTG can be installed with pip:
+The required packages can be installed with pip:
 
 ```
 cd GTG
